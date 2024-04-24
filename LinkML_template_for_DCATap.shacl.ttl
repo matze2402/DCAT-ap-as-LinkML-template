@@ -1,0 +1,34 @@
+# metamodel_version: 1.7.0
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcat:Dataset a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:order 3 ;
+            sh:path <https://ndfi4cat.de/linkml/tests/DCATap/:dct_keyword> ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dcat:description ],
+        [ sh:order 2 ;
+            sh:path <https://ndfi4cat.de/linkml/tests/DCATap/:dct_contactPoint> ],
+        [ sh:order 4 ;
+            sh:path <https://ndfi4cat.de/linkml/tests/DCATap/:dct_theme> ],
+        [ sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://ndfi4cat.de/linkml/tests/DCATap/:dct_title> ],
+        [ sh:order 5 ;
+            sh:path <https://ndfi4cat.de/linkml/tests/DCATap/:adms_identifier> ] ;
+    sh:targetClass dcat:Dataset .
+
+rdfs:Literal a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass rdfs:Literal .
+
+

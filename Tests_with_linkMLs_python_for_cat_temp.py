@@ -16,7 +16,7 @@ You will therefore need to delete the commenting marks in the second run.
 So the last import statement above should be uncommented and the last six lines should be uncommented in the second run.
 """
 
-with open("./LinkML_template_of_DCATap.yaml") as file:
+with open("./LinkML_template_of_DCATap_neu3_anderes_Konzept.yaml") as file:
     data = file.read()
 
 # gen_ser = PythonGenerator(data).serialize()

@@ -1,0 +1,614 @@
+# metamodel_version: 1.7.0
+@prefix adms: <http://www.w3.org/ns/adms> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lcon: <http://www.w3.org/ns/locn> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix owl1: <http://www.w3.org/2002/07/owl> .
+@prefix prov1: <http://www.w3.org/ns/prov> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sh1: <http://www.w3.org/ns/shacl> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spdx: <http://spdx.org/rdf/terms> .
+@prefix time1: <http://www.w3.org/2006/time> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dct:LicenseDocument a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class skos:Concept ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dct:type ] ;
+    sh:targetClass dct:LicenseDocument .
+
+dcat:Catalog a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path dct:modified ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path dcat:issued ],
+        [ sh:class dct:RightsStatement ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 7 ;
+            sh:path dct:rights ],
+        [ sh:class dct:LinguisticSystem ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path dct:language ],
+        [ sh:class skos:ConceptScheme ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path dcat:themeTaxonomy ],
+        [ sh:class foaf:Document ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path foaf:homepage ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dct:description ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path dct:title ] ;
+    sh:targetClass dcat:Catalog .
+
+dcat:CatalogRecord a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class dct:LinguisticSystem ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path dct:language ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path dct:modified ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path dct:title ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path dcat:issued ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path dct:description ],
+        [ sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path adms:status ],
+        [ sh:class dct:Standard ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path dct:conformsTo ] ;
+    sh:targetClass dcat:CatalogRecord .
+
+dcat:DataService a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class rdfs:Resource ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dcat:endpointDescription ],
+        [ sh:class rdfs:Resource ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path dcat:endpointURL ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path dct:description ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path dct:title ],
+        [ sh:class dct:MediaTypeorExtent ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path dct:format ],
+        [ sh:class dct:RightsStatement ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path dct:accessRights ] ;
+    sh:targetClass dcat:DataService .
+
+dcat:Dataset a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class prov1:Activity ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 21 ;
+            sh:path prov1:wasGeneratedBy ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path dcat:version ],
+        [ sh:class dct:RightsStatement ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 7 ;
+            sh:path dct:accessRights ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 26 ;
+            sh:path dct:title ],
+        [ sh:class prov1:Attribution ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 20 ;
+            sh:path prov1:qualifiedAttribution ],
+        [ sh:class foaf:Document ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path dcat:landingPage ],
+        [ sh:class dct:LinguisticSystem ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 13 ;
+            sh:path dct:language ],
+        [ sh:class adms:Identifier ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path adms:identifier ],
+        [ sh:class foaf:Document ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 18 ;
+            sh:path foaf:page ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 12 ;
+            sh:path dct:issued ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 10 ;
+            sh:path dct:identifier ],
+        [ sh:class rdfs:Resource ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 16 ;
+            sh:path dct:relation ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 25 ;
+            sh:path dct:description ],
+        [ sh:class xsd:decimal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path dcat:spartialResolutionInMeters ],
+        [ sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 17 ;
+            sh:path dct:type ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path adms:versionNotes ],
+        [ sh:class dct:Frequency ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 8 ;
+            sh:path dct:accrualPeriodicity ],
+        [ sh:class skos:Concept ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 24 ;
+            sh:path dcat:theme ],
+        [ sh:class vcard:Kind ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 22 ;
+            sh:path dcat:contactPoint ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 23 ;
+            sh:path dcat:keyword ],
+        [ sh:class dcat:Relationship ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path dcat:qualifiedRelation ],
+        [ sh:class rdfs:Resource ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 11 ;
+            sh:path dct:isReferencedBy ],
+        [ sh:class xsd:duration ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path dcat:temporalResolution ],
+        [ sh:class dct:ProvenanceStatement ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 15 ;
+            sh:path dct:provenance ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 14 ;
+            sh:path dct:modified ],
+        [ sh:class dct:Standard ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 9 ;
+            sh:path dct:conformsTo ],
+        [ sh:class rdfs:Literal ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 19 ;
+            sh:path owl1:versionInfo ] ;
+    sh:targetClass dcat:Dataset .
+
+dcat:DatasetInSeries a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path dct:description ],
+        [ sh:class dct:Frequency ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dct:accrualPeriodicity ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path dct:title ] ;
+    sh:targetClass dcat:DatasetInSeries .
+
+dcat:DatasetSeries a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class dct:Frequency ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path dct:accrualPeriodicity ],
+        [ sh:class vcard:Kind ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dcat:contactPoint ],
+        [ sh:class dct:PeriodOfTime ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path dct:temporal ],
+        [ sh:class dct:Location ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path dct:spatial ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 7 ;
+            sh:path dct:title ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path dct:modified ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path dct:description ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path dct:issued ] ;
+    sh:targetClass dcat:DatasetSeries .
+
+dcat:Distribution a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class odrl:Policy ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 14 ;
+            sh:path odrl:hasPolicy ],
+        [ sh:class dct:LinguisticSystem ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 10 ;
+            sh:path dct:language ],
+        [ sh:class rdfs:Resource ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path dcat:downloadURL ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 18 ;
+            sh:path dct:description ],
+        [ sh:class dct:RightsStatement ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 11 ;
+            sh:path dct:rights ],
+        [ sh:class xsd:MediaType ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path dcat:mediaType ],
+        [ sh:class xsd:duration ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 7 ;
+            sh:path dcat:temporalResolution ],
+        [ sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path adms:status ],
+        [ sh:class rdfs:Literal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 12 ;
+            sh:path dct:title ],
+        [ sh:class dct:MediaTypeorExtent ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 19 ;
+            sh:path dct:format ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 9 ;
+            sh:path dct:issued ],
+        [ sh:class xsd:MediaType ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path dcat:packageFormat ],
+        [ sh:class xsd:decimal ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path dcat:spartialResolutionInMeters ],
+        [ sh:class spdx:Checksum ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 15 ;
+            sh:path spdx:checksum ],
+        [ sh:class xsd:MediaType ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path dcat:compressFormat ],
+        [ sh:class foaf:Document ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 13 ;
+            sh:path foaf:page ],
+        [ sh:class rdfs:Resource ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 16 ;
+            sh:path dcat:acessURL ],
+        [ sh:class xsd:nonNegativeInteger ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path dcat:byteSize ],
+        [ sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 17 ;
+            sh:path dcatap:availability ],
+        [ sh:class dct:Standard ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 8 ;
+            sh:path dct:conformsTo ] ;
+    sh:targetClass dcat:Distribution .
+
+dcat:Resource a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dcat:Resource .
+
+foaf:Agent a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dct:type ],
+        [ sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path foaf:name ] ;
+    sh:targetClass foaf:Agent .
+
+dct:Location a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ),
+        ( rdf:type ) ;
+    sh:property [ sh:class rdfs:Literal ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dcat:bbox ],
+        [ sh:class rdfs:Literal ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path dcat:centroid ],
+        [ sh:class lcon:Geometry ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path lcon:geometry ] ;
+    sh:targetClass dct:Location .
+
+dct:PeriodOfTime a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ),
+        ( rdf:type ) ;
+    sh:property [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path dcat:endDate ],
+        [ sh:class sh1:TimeInstant ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path time1:hasBeginning ],
+        [ sh:class sh1:TimeInstant ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path time1:hasEnd ],
+        [ sh:class sh1:TemporalLiteral ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path dcat:startDate ] ;
+    sh:targetClass dct:PeriodOfTime .
+
+dct:ProvenanceStatement a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dct:ProvenanceStatement .
+
+spdx:Checksum a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass spdx:Checksum .
+
+xsd:nonNegativeInteger a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass xsd:nonNegativeInteger .
+
+skos:ConceptScheme a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass skos:ConceptScheme .
+
+adms:Identifier a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass adms:Identifier .
+
+dcat:Relationship a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dcat:Relationship .
+
+lcon:Geometry a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass lcon:Geometry .
+
+odrl:Policy a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass odrl:Policy .
+
+prov1:Activity a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass prov1:Activity .
+
+prov1:Attribution a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass prov1:Attribution .
+
+dct:MediaTypeorExtent a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dct:MediaTypeorExtent .
+
+xsd:decimal a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass xsd:decimal .
+
+xsd:duration a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass xsd:duration .
+
+vcard:Kind a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass vcard:Kind .
+
+sh1:TimeInstant a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass sh1:TimeInstant .
+
+dct:Frequency a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dct:Frequency .
+
+dct:Standard a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dct:Standard .
+
+xsd:MediaType a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass xsd:MediaType .
+
+dct:LinguisticSystem a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dct:LinguisticSystem .
+
+dct:RightsStatement a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass dct:RightsStatement .
+
+foaf:Document a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass foaf:Document .
+
+rdfs:Resource a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass rdfs:Resource .
+
+skos:Concept a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass skos:Concept .
+
+sh1:TemporalLiteral a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass sh1:TemporalLiteral .
+
+rdfs:Literal a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass rdfs:Literal .
+
+

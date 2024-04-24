@@ -1,0 +1,1101 @@
+id: https://ndfi4cat.de/linkml/tests/DCATap
+name: DCATap_LinkML_Template
+prefixes:
+  linkml: https://w3id.org/linkml/
+  DCATap_LinkML_Template_from_NFDI4Cat: https://ndfi4cat.de/linkml/tests/DCATap
+  foaf: http://xmlns.com/foaf/0.1/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns
+  adms: http://www.w3.org/ns/adms
+  cc: http://creativecommons.org/ns
+  dc: http://purl.org/dc/elements/1.1/
+  dcat: http://www.w3.org/ns/dcat#
+  dct: http://purl.org/dc/terms/
+  lcon: http://www.w3.org/ns/locn
+  org: http://www.w3.org/ns/org
+  owl: http://www.w3.org/2002/07/owl
+  odrl: http://www.w3.org/ns/odrl/2/
+  prov: http://www.w3.org/ns/prov
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  sh: http://www.w3.org/ns/shacl
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms
+  time: http://www.w3.org/2006/time
+  vcard: http://www.w3.org/2006/vcard/ns
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dcatap: http://data.europa.eu/r5r/
+imports:
+  - linkml:types
+default_prefix: sh
+
+classes:
+    Catalog:
+        class_uri: dcat:Catalog
+        slots:
+            - dct_description_mt
+            - dct_title_mt
+            - dcat_themeTaxonomy_rm
+            - dct_issued_rs
+            - dct_language_rm
+            - dct_modified_rs
+            - foaf_homepage_rs
+            - dct_rights_os
+        # attributes:
+        #     LicenseDocuments:
+        #         range: LicenseDocument
+        #         recommended: true
+        #         multivalued: false
+            
+            
+    LicenseDocument:
+        class_uri: dct:LicenseDocument
+        slots:
+            - dct_type_rm
+    
+    DataService:
+        class_uri: dcat:DataService
+        slots:
+            - dcat_endpointDescription_rm
+            - dcat_endpointURL_mt
+            - dct_title_mt
+            - dct_accessRights_os
+            - dct_description_om
+            - dct_format_om
+            
+            
+    
+    CatalogRecord:
+        class_uri: dcat:CatalogRecord
+        slots:
+            - adms_status_rs
+            - dct_conformsTo_rs
+            - dct_issued_rs
+            - dct_description_om
+            - dct_language_om
+            - dct_title_om
+            - dct_modified
+    
+    Location:
+        class_uri: dct:Location
+        slots:
+            - dcat_bbox_rs
+            - dcat_centroid_rs
+            - lcon_geometry_os
+    
+    PeriodOfTime:
+        class_uri: dct:PeriodOfTime
+        slots:
+            - dcat_endDate_rs
+            - dcat_startDate_rs
+            - time_hasBeginning_os
+            - time_hasEnd_os
+    
+    Dataset:
+        class_uri: dcat:Dataset
+        slots:
+            - adms_identifier_om
+            - adms_versionNotes_om
+            - dcat_landingPage_om
+            - dcat_qualifiedRelation_om
+            - dcat_spartialResolutionInMeters_om
+            - dcat_temporalResolution_om
+            - dcat_version_om
+            - dct_accessRights_os
+            - dct_accrualPeriodicity_os
+            - dct_conformsTo_om
+            - dct_identifier_om
+            - dct_isReferencedBy_om
+            - dct_issued_os
+            - dct_language_om
+            - dct_modified_os
+            - dct_provenance_om
+            - dct_relation_om
+            - dct_type_os
+            - foaf_page_om
+            - owl_versionInfo_os
+            - prov_qualifiedAttribution_om
+            - prov_wasGeneratedBy_om
+            - dcat_contactPoint_rm
+            - dcat_keyword_rm
+            - dcat_theme_rm
+            - dct_description_mt
+            - dct_title_mt
+    
+    Distribution:
+        class_uri: dcat:Distribution
+        slots:
+            - adms_status_os
+            - dcat_byteSize_os
+            - dcat_compressFormat_os
+            - dcat_downloadURL_om
+            - dcat_mediaType_os
+            - dcat_packageFormat_os
+            - dcat_spartialResolutionInMeters_om
+            - dcat_temporalResolution_om
+            - dct_conformsTo_om
+            - dct_issued_os
+            - dct_language_om
+            - dct_rights_os
+            - dct_title_om
+            - foaf_page_om
+            - odrl_hasPolicy_os
+            - spdx_checksum_os
+            - dcat_accessURL_mt
+            - dcatap_availability_rs
+            - dct_description_rm
+            - dct_format_rs
+   
+    DatasetSeries:
+        class_uri: dcat:DatasetSeries
+        slots:
+            - dcat_contactPoint_rm
+            - dct_accrualPeriodicity_os
+            - dct_issued_os
+            - dct_modified_rs
+            - dct_spatial_om
+            - dct_temporal_om
+            - dct_description_mt
+            - dct_title_mt    
+    
+    Agent:
+        class_uri: foaf:Agent
+        slots:
+            - dct_type_rs
+            - foaf_name_mt
+        
+    DatasetInSeries:
+        class_uri: dcat:DatasetInSeries
+        slots: 
+        - dct_accrualPeriodicity_om
+        - dct_description_mt
+        - dct_title_mt
+        
+    
+    dcat_Resource:
+        class_uri: dcat:Resource
+    
+        
+        
+        
+            
+    
+        
+#    Container:
+#        attributes:
+#            Catalogs:
+#                multivalued: true
+#                inlined_as_list: true
+#                range: Catalog
+#                required: true  
+    
+    # Subclasses
+        # for Catalog
+    skos_ConceptScheme:
+        class_uri: skos:ConceptScheme
+       
+    TemporalLiteral:
+    
+    dct_LinguisticSystem:
+        class_uri: dct:LinguisticSystem
+    
+    foaf_Document:
+        class_uri: foaf:Document
+        
+    rdfs_Literal:
+        class_uri: rdfs:Literal
+        
+    dct_RightsStatement:
+        class_uri: dct:RightsStatement
+        
+        
+        # for LicenseDocument
+    skos_Concept:
+        class_uri: skos:Concept
+        
+        
+        #for DataService
+    rdfs_Resource:
+        class_uri: rdfs:Resource
+           
+        #rdfs_Literal: schon in Catalog definiert
+           
+           
+        #dct_RightsStatement: #schon in Catalog definiert
+          
+           
+    dct_MediaTypeorExtent:
+        class_uri: dct:MediaTypeorExtent
+           
+         
+        #for CatalogRecord
+        #skos_Concept: #schon in LicenseDocument definiert
+        
+    dct_Standard:
+        class_uri: dct:Standard
+            
+        #TemporalLiteral schon in Catalog definiert
+        
+        #rdfs_Literal: #schon in Catalog definiert
+        
+        #dct_LinguisticSystem: #schon in Catalog definiert
+        
+        
+        #for Location
+        #rdfs_Literal: #schon in Catalog definiert
+        
+    lcon_Geometry:
+        class_uri: lcon:Geometry
+            
+            
+        #for PeriodOfTime
+        # TemporalLiteral schon in Catalog definiert
+        
+    TimeInstant:
+        
+        
+        #for Agent
+        #skos_Concept: #schon in LicenseDocument definiert
+        
+        #rdfs_Literal: #schon in Catalog definiert
+        
+        
+        #for Dataset
+    adms_Identifier:
+        class_uri: adms:Identifier
+            
+        #rdfs_Literal: #schon in Catalog definiert
+        
+        #foaf_Document: #schon in Catalog definiert
+        
+    dcat_Relationship:
+        class_uri: dcat:Relationship
+            
+    xsd_decimal:
+        class_uri: xsd:decimal
+            
+    xsd_duration:
+        class_uri: xsd:duration
+            
+        #rdfs_Literal: #schon in Catalog definiert
+        
+        #dct_RightsStatement: #schon in Catalog definiert
+        
+    dct_Frequency:
+        class_uri: dct:Frequency
+            
+        #dct_Standard: #schon in CatalogRecord definiert
+        
+        #rdfs_Literal: #schon in Catalog definiert
+        
+        #rdfs_Resource: #schon in DataService definiert
+        
+        #TemporalLiteral schon in Catalog definiert
+        
+        #dct_LinguisticSystem: #schon in Catalog definiert
+        
+    dct_ProvenanceStatement:
+        class_uri: dct:ProvenanceStatement
+            
+        #rdfs_Resource: #schon in DataService definiert
+        
+        #skos_Concept: #schon in LicenseDocument definiert
+        
+        #foaf_Document: #schon in Catalog definiert
+        
+    prov_Attribution:
+        class_uri: prov:Attribution
+            
+    prov_Activity:
+        class_uri: prov:Activity
+            
+    vcard_Kind:
+        class_uri: vcard:Kind
+            
+            
+        #for DatasetInSeries
+        #dct_Frequency: #schon in Dataset definiert
+        
+        #rdfs_Literal: #schon in Catalog definiert
+        
+        
+        
+        #for Distribution:
+        #skos_Concept: #schon in LicenseDocument definiert
+        
+    xsd_nonNegativeInteger:
+        class_uri: xsd:nonNegativeInteger
+            
+    dct_MediaType:
+        class_uri: xsd:MediaType
+            
+        #rdfs_Resource: #schon in DataService definiert
+        
+        #xsd_decimal: #schon in DataSet definiert
+        
+        #xsd_duration: #schon in DataSet definiert
+        
+        #dct_Standard: #schon in CatalogRecord definiert
+        
+        #TemporalLiteral schon in Catalog definiert
+        
+        #dct_LinguisticSystem: #schon in Catalog definiert
+        
+        #dct_RightsStatement: #schon in Catalog definiert
+        
+        #rdfs_Literal: #schon in Catalog definiert
+        
+        #foaf_Document: #schon in Catalog definiert
+        
+    odrl_Policy:
+        class_uri: odrl:Policy
+            
+    spdx_Checksum:
+        class_uri: spdx:Checksum
+            
+        #dct_MediaTypeorExtent: #schon in DataService definiert
+        
+        
+        #for DatasetSeries
+        
+        #vcard_Kind: #schon in DataSet definiert
+        
+        #dct_Frequency: #schon in DataSet definiert
+        
+        #TemporalLiteral schon in Catalog definiert
+        
+    dct_Location: 
+        class_uri: dct:Location
+            
+    dct_PeriodofTime:
+        class_uri: dct:PeriodOfTime
+            
+        #rdfs_Literal: #schon in Catalog definiert
+        
+        
+        
+    
+slots:
+    # for Catalog
+        # mandatory
+    dct_description_mt:
+        slot_uri: dct:description
+        range: rdfs_Literal
+        required: true
+        multivalued: true
+    dct_title_mt:
+        slot_uri: dct:title
+        range: rdfs_Literal
+        required: true
+        multivalued: true
+        #recommended
+    dcat_themeTaxonomy_rm:
+        slot_uri: dcat:themeTaxonomy
+        range: skos_ConceptScheme
+        recommended: true
+        multivalued: true
+    dct_issued_rs:
+        slot_uri: dcat:issued
+        range: TemporalLiteral
+        recommended: true
+        multivalued: false
+    dct_language_rm:
+        slot_uri: dct:language
+        range: dct_LinguisticSystem
+        recommended: true
+        multivalued: true
+    dct_modified_rs:
+        slot_uri: dct:modified
+        range: TemporalLiteral
+        recommended: true
+        multivalued: false
+    foaf_homepage_rs:
+        slot_uri: foaf:homepage
+        range: foaf_Document
+        recommended: true
+        multivalued: false
+        # optional
+    dct_rights_os:
+        slot_uri: dct:rights
+        range: dct_RightsStatement
+        required: false
+        multivalued: false
+        
+    # for LicenseDocument
+        # recommended
+    dct_type_rm:
+        slot_uri: dct:type
+        range: skos_Concept
+        recommended: true
+        multivalued: true
+        
+    # for DataService
+        # mandatory
+    dcat_endpointURL_mt:
+        slot_uri: dcat:endpointURL
+        range: rdfs_Resource
+        required: true
+        multivalued: true
+        
+    # dct_title_mt:
+    #     already introduced in Catalog    
+        #recommended
+    dcat_endpointDescription_rm:
+        slot_uri: dcat:endpointDescription
+        range: rdfs_Resource
+        recommended: true
+        multivalued: true
+        #optional
+    dct_accessRights_os:
+        slot_uri: dct:accessRights
+        range: dct_RightsStatement
+        required: false
+        multivalued: false  
+              
+    dct_description_om:
+        slot_uri: dct:description
+        range: rdfs_Literal
+        required: false
+        multivalued: true
+    
+    dct_format_om:
+        slot_uri: dct:format
+        range: dct_MediaTypeorExtent
+        required: false
+        multivalued: true
+        
+    #for CatalogRecord
+        #recommended
+    adms_status_rs:
+        slot_uri: adms:status
+        range: skos_Concept
+        recommended: true
+        multivalued: false
+        
+    dct_conformsTo_rs:
+        slot_uri: dct:conformsTo
+        range: dct_Standard
+        recommended: true
+        multivalued: false
+        
+    # dct_issued_rs: schon definiert in Catalog
+    
+        #optional
+    #dct_description_om: schon definiert in DataService
+        
+        
+    #dct_language_rm: schon definiert in Catalog
+        
+        
+    dct_title_om: 
+        slot_uri: dct:title
+        range: rdfs_Literal
+        required: false
+        multivalued: true
+        #mandatory
+    dct_modified:
+        slot_uri: dct:modified
+        range: TemporalLiteral
+        required: true
+        #multivalued: kein Wert
+        
+    #for Location
+        #recommended
+    dcat_bbox_rs:
+        slot_uri: dcat:bbox
+        range: rdfs_Literal
+        recommended: true
+        multivalued: false
+        
+    dcat_centroid_rs:
+        slot_uri: dcat:centroid
+        range: rdfs_Literal
+        recommended: true
+        multivalued: false
+        #optional
+    lcon_geometry_os:
+        slot_uri: lcon:geometry
+        range: lcon_Geometry
+        required: false
+        multivalued: false 
+        
+    #for PeriodofTime
+        #recommended
+    dcat_endDate_rs:
+        slot_uri: dcat:endDate
+        range: TemporalLiteral
+        recommended: true
+        multivalued: false
+        
+    dcat_startDate_rs:
+        slot_uri: dcat:startDate
+        range: TemporalLiteral
+        recommended: true
+        multivalued: false
+        #optional
+    time_hasBeginning_os:
+        slot_uri: time:hasBeginning
+        range: TimeInstant
+        required: false
+        multivalued: false
+        
+    time_hasEnd_os:
+        slot_uri: time:hasEnd
+        range: TimeInstant
+        required: false
+        multivalued: false
+        
+    #for Agent
+        #recommended
+    dct_type_rs:
+        slot_uri: dct:type
+        range: skos_Concept
+        recommended: true
+        multivalued: false
+        #mandatory
+    foaf_name_mt:
+        slot_uri: foaf:name
+        range: rdfs_Literal
+        required: true
+        multivalued: true
+        
+     # for DataSet
+         #optional
+    adms_identifier_om:
+        slot_uri: adms:identifier
+        range: adms_Identifier
+        required: false
+        multivalued: true
+        
+    adms_versionNotes_om:
+        slot_uri: adms:versionNotes
+        range: rdfs_Literal
+        required: false
+        multivalued: true
+        
+    dcat_landingPage_om:
+        slot_uri: dcat:landingPage
+        range: foaf_Document
+        required: false
+        multivalued: true
+        
+    dcat_qualifiedRelation_om:
+        slot_uri: dcat:qualifiedRelation
+        range: dcat_Relationship
+        required: false
+        multivalued: true
+        
+    dcat_spartialResolutionInMeters_om:
+        slot_uri: dcat:spartialResolutionInMeters
+        range: xsd_decimal
+        required: false
+        multivalued: true
+        
+    dcat_temporalResolution_om:
+        slot_uri: dcat:temporalResolution
+        range: xsd_duration
+        required: false
+        multivalued: true
+        
+    dcat_version_om:
+        slot_uri: dcat:version
+        range: rdfs_Literal
+        required: false
+        multivalued: true
+        
+    #dct_accessRights_os schon in DataService definiert
+        
+        
+    dct_accrualPeriodicity_os:
+        slot_uri: dct:accrualPeriodicity
+        range: dct_Frequency
+        required: false
+        multivalued: false
+    
+    dct_conformsTo_om:
+        slot_uri: dct:conformsTo
+        range: dct_Standard
+        required: false
+        multivalued: true
+        
+    dct_identifier_om:
+        slot_uri: dct:identifier
+        range: rdfs_Literal
+        required: false
+        multivalued: true
+        
+    dct_isReferencedBy_om:
+        slot_uri: dct:isReferencedBy
+        range: rdfs_Resource
+        required: false
+        multivalued: true
+        
+    dct_issued_os:
+        slot_uri: dct:issued
+        range: TemporalLiteral
+        required: false
+        multivalued: false
+        
+    dct_language_om:
+        slot_uri: dct:language
+        range: dct_LinguisticSystem
+        required: false
+        multivalued: true
+        
+    dct_modified_os:
+        slot_uri: dct:modified
+        range: TemporalLiteral
+        required: false
+        multivalued: false
+        
+    dct_provenance_om:
+        slot_uri: dct:provenance
+        range: dct_ProvenanceStatement
+        required: false
+        multivalued: true
+        
+    dct_relation_om:
+        slot_uri: dct:relation
+        range: rdfs_Resource
+        required: false
+        multivalued: true
+        
+    dct_type_os:
+        slot_uri: dct:type
+        range: skos_Concept
+        required: false
+        multivalued: false
+        
+    foaf_page_om:
+        slot_uri: foaf:page
+        range: foaf_Document
+        required: false
+        multivalued: true
+        
+    owl_versionInfo_os:
+        slot_uri: owl:versionInfo
+        range: rdfs_Literal
+        required: false
+        multivalued: false
+        
+    prov_qualifiedAttribution_om:
+         slot_uri: prov:qualifiedAttribution
+         range: prov_Attribution
+         required: false
+         multivalued: true
+     
+    prov_wasGeneratedBy_om:
+        slot_uri: prov:wasGeneratedBy
+        range: prov_Activity
+        required: false
+        multivalued: true
+        #recommended
+    dcat_contactPoint_rm:
+        slot_uri: dcat:contactPoint
+        range: vcard_Kind
+        recommended: true
+        multivalued: true
+        
+    dcat_keyword_rm:
+        slot_uri: dcat:keyword
+        range: rdfs_Literal
+        recommended: true
+        multivalued: true
+        
+    dcat_theme_rm:
+        slot_uri: dcat:theme
+        range: skos_Concept
+        recommended: true
+        multivalued: true
+        #mandatory
+    #dct_description_mt schon in Catalog definiert
+    
+    #dct_title_mt schon in Catalog definiert
+    
+    #for DatasetInSeries
+        #optional
+    dct_accrualPeriodicity_om:
+        slot_uri: dct:accrualPeriodicity
+        range: dct_Frequency
+        required: false
+        multivalued: true
+        #for mandatory
+    #dct_description_mt schon in Catalog definiert
+        
+        
+    #dct_title_mt schon in Catalog definiert
+    
+    #for Distribution
+    adms_status_os:
+        slot_uri: adms:status
+        range: skos_Concept
+        required: false
+        multivalued: false
+        
+    dcat_byteSize_os:
+        slot_uri: dcat:byteSize
+        range: xsd_nonNegativeInteger
+        required: false
+        multivalued: false
+        
+    dcat_compressFormat_os:
+        slot_uri: dcat:compressFormat
+        range: dct_MediaType
+        required: false
+        multivalued: false
+        
+    dcat_downloadURL_om:
+        slot_uri: dcat:downloadURL
+        range: rdfs_Resource
+        required: false
+        multivalued: true
+        
+    dcat_mediaType_os:
+        slot_uri: dcat:mediaType
+        range: dct_MediaType
+        required: false
+        multivalued: false
+        
+    dcat_packageFormat_os:
+        slot_uri: dcat:packageFormat
+        range: dct_MediaType
+        required: false
+        multivalued: false
+        
+    #dcat_spartialResolutionInMeters_om schon in DataSet definiert
+    
+    #dcat_temporalResolution_om schon in DataSet definiert
+    
+    #dct_conformsTo_om schon in DataSet definiert
+
+    #dct_issued_os schon in DataSet definiert   
+    
+    #dct_language_om schon in DataSet definiert
+    
+    #dct_modified_os schon in DataSet definiert
+    
+    #dct_rights_os schon in Catalog definiert
+        
+    #dct_title_om schon in DataService definiert
+        
+    #foaf_page_om schon in DataSet definiert   
+    
+    odrl_hasPolicy_os:
+        slot_uri: odrl:hasPolicy
+        range: odrl_Policy
+        required: false
+        multivalued: false
+        
+    spdx_checksum_os:
+        slot_uri: spdx:checksum
+        range: spdx_Checksum
+        required: false
+        multivalued: false
+    # mandatory
+    dcat_accessURL_mt:
+        slot_uri: dcat:acessURL
+        range: rdfs_Resource
+        required: true
+        multivalued: true
+    # recommended
+    dcatap_availability_rs:
+        slot_uri: dcatap:availability
+        range: skos_Concept
+        recommended: true
+        multivalued: false
+        
+    dct_description_rm:
+        slot_uri: dct:description
+        range: rdfs_Literal
+        recommended: true
+        multivalued: true
+        
+    dct_format_rs:
+        slot_uri: dct:format
+        range: dct_MediaTypeorExtent
+        recommended: true
+        multivalued: false
+        
+    #for DataSetSeries
+    #recommended
+    #dcat_contactPoint_rm wurde schon in DataSet definiert
+        
+    #optional
+    #dct_accrualPeriodicity_os wurde schon in DataSet definiert
+    
+    #dct_issued_os wurde schon in DataSet definiert    
+
+    #dct_modified_os wurde schon in DataSet definiert    
+    
+    dct_spatial_om:
+        slot_uri: dct:spatial
+        range: dct_Location
+        required: false
+        multivalued: true
+        
+    dct_temporal_om:
+        slot_uri: dct:temporal
+        range: dct_PeriodofTime
+        required: false
+        multivalued: true
+    #for mandatory
+    #dct_description_mt schon in Catalog definiert
+        
+    #dct_title_mt schon in Catalog definiert   
+    
+    
+    
+    # for Catalog
+    dct_license_Catalog_LicenseDoc:
+        slot_uri: dct:license
+        range: LicenseDocument 
+        recommended: true
+        multivalued: false
+        
+    dcat_Catalog_Catalog_Catalog:
+        slot_uri: dcat:catalog
+        range: Catalog
+        required: false
+        multivalued: true
+        
+    dct_creator_Catalog_Agent:
+        slot_uri: dct:creator
+        range: Agent
+        required: true
+        multivalued: false
+        
+    dct_publisher_Catalog_Agent:
+        slot_uri: dct:publisher
+        range: Agent
+        required: true
+        multivalued: false
+        
+    dct_temporal_Catalog_PeriodOfTime:
+        slot_uri: dct:temporal
+        range: PeriodOfTime
+        required: false
+        multivalued: true
+        
+    dcat_dataset_Catalog_Dataset:
+        slot_uri: dcat:dataset
+        range: Dataset
+        recommended: true
+        multivalued: true
+        
+    dct_spartial_Catalog_Location:
+        slot_uri: dct:spatial
+        range: Location
+        recommended: true
+        multivalued: true
+        
+    dct_isPartOf_Catalog_Catalog:
+        slot_uri: dct:isPartOf
+        range: Catalog
+        required: false
+        multivalued: false
+        
+    dct_hasPart_Catalog_Catalog:
+        slot_uri: dct:hasPart
+        range: Catalog
+        required: false
+        multivalued: true
+        
+    dcat_record_Catalog_CatalogRecord:
+        slot_uri: dcat:record
+        range: CatalogRecord
+        required: false
+        multivalued: true
+        
+    dcat_service_Catalog_DataService:
+        slot_uri: dcat:service
+        range: DataService
+        recommended: true
+        multivalued: true
+        
+        
+    #für LicenseDocument gibt es keine Pfeile die wegführen
+    
+    #for DataService
+    
+    dcat_license_DataService_LicenseDocument:
+        slot_uri: dct:license
+        range: LicenseDocument
+        required: false
+        multivalued: false
+
+ #Pfeil von Dataservice zu dcat:Resource fehlt
+ 
+
+    dcat_servesDataset_DataService_Dataset:
+        slot_uri: dcat:servesDataset
+        range: Dataset
+        recommended: true
+        multivalued: true
+        
+        
+    #for CatalogRecord
+    
+    foaf_primaryTopic_CatalogRecord_dcat_Resource:
+        slot_uri: foaf:primaryTopic
+        range: dcat_Resource
+        required: true
+        multivalued: false
+        
+    dct_source_CatalogRecord_CatalogRecord:
+        slot_uri: dct:source
+        range: CatalogRecord
+        required: false
+        multivalued: false
+        
+        
+    #for Location gibt es keine abgehenden Pfeile
+    
+    #for PeriodOfTime gibt es keine abgehenden Pfeile
+    
+    #for Agent gibt es keine abgehenden Pfeile
+    
+    #for dcat_Resource gibt es keine abgehenden Pfeile
+    
+    #for Dataset
+    
+    dcat_hasVersion_Dataset_Dataset:
+        slot_uri: dcat:hasVersion
+        range: Dataset
+        required: false
+        multivalued: true
+        
+    dcat_isVersionOf_Dataset_Dataset:
+        slot_uri: dcat:isVersionOf
+        range: Dataset
+        required: false
+        multivalued: true
+        
+    dct_source_Dataset_Dataset:
+        slot_uri: dct:source
+        range: Dataset
+        required: false
+        multivalued: true
+        
+    dct_spatial_Dataset_Location:
+        slot_uri: dct:spatial 
+        range: Location
+        recommended: true
+        multivalued: true
+        
+    dct_temporal_Dataset_PeriodOfTime:
+        slot_uri: dct:temporal
+        range: PeriodOfTime
+        recommended: true
+        multivalued: true
+        
+    dct_publisher_Dataset_Agent:
+        slot_uri: dct:publisher
+        range: Agent
+        recommended: true
+        multivalued: false
+        
+    dct_creator_Dataset_Agent:
+        slot_uri: dct:creator
+        range: Agent
+        required: false
+        multivalued: false  
+        
+    dcat_distribution_Dataset_Distribution:
+        slot_uri: dcat:distribution
+        range: Distribution
+        recommended: true
+        multivalued: true
+        
+    adms_sample_Dataset_Distribution:
+        slot_uri: adms:sample
+        range: Distribution
+        required: false
+        multivalued: true     
+        
+    #Pfeil zu dcat:Resource fehlt
+    
+    
+    #for DatasetInSeries Verbindungen fehlen, da keine Pfeilrichtungen bekannt
+    
+    
+    #for DatasetSeries:
+    
+    dcat_first_DatasetSeries_DatasetInSeries:
+        slot_uri: dcat:first
+        range: DatasetInSeries
+        #required keine Aussage
+        multivalued: false
+        
+    dcat_last_DatasetSeries_DatasetInSeries:
+        slot_uri: dcat:last
+        range: DatasetInSeries
+        #required: keine Aussage
+        multivalued: false
+        
+    #pfeil zu dcat:Resource fehlt
+    
+    dct_publisher_DatasetSeries_Agent:
+        slot_uri: dct:publisher
+        range: Agent
+        recommended: true
+        multivalued: false
+        
+        
+    #for Distribution
+    
+    dcat_accessService_Distribution_DataService:
+        slot_uri: dcat:accessService
+        range: DataService
+        required: false
+        multivalued: true
+        
+    dct_license_Distribution_LicenseDocument:
+        slot_uri: dct:license
+        range: LicenseDocument
+        recommended: true
+        multivalued: false
+        
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
