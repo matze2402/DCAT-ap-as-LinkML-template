@@ -124,7 +124,11 @@ classes:
                 multivalued: true
             dct_issued:
                 slot_uri: dct:issued
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             dct_language:
@@ -134,7 +138,11 @@ classes:
                 multivalued: true
             dct_modified:
                 slot_uri: dct:modified
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             dct_provenance:
@@ -296,7 +304,11 @@ classes:
                 multivalued: true
             dct_issued:
                 slot_uri: dct:issued
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             dct_language:
@@ -306,7 +318,11 @@ classes:
                 multivalued: true
             dct_modified:
                 slot_uri: dct:modified
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             dct_rights:
@@ -370,7 +386,11 @@ classes:
                 multivalued: true
             dct_issued:
                 slot_uri: dct:issued
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             dct_language:
@@ -380,7 +400,11 @@ classes:
                 multivalued: true
             dct_modified:
                 slot_uri: dct:modified
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             foaf_homepage:
@@ -526,7 +550,11 @@ classes:
         # mandatory
             dct_modified:
                 slot_uri: dct:modified
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: true
                 multivalued: false
         # recommended
@@ -542,7 +570,11 @@ classes:
                 multivalued: true
             dct_issued:
                 slot_uri: dct:issued
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
         # optional
@@ -604,23 +636,39 @@ classes:
         # recommended
             dcat_endDate:
                 slot_uri: dcat:endDate
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             dcat_startDate:
                 slot_uri: dcat:startDate
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
         # optional
             time_hasBeginning:
                 slot_uri: time:hasBeginning
-                range: TimeInstant
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             time_hasEnd:
                 slot_uri: time:hasEnd
-                range: TimeInstant
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
         # arrows
@@ -643,7 +691,7 @@ classes:
         # arrows
         
     DatasetinSeries:
-        class_uri: DatasetinSeries
+        class_uri: dcatap:DatasetinSeries
         attributes:
         # mandatory
             dct_description:
@@ -709,16 +757,20 @@ classes:
                 multivalued: false
             dct_issued:
                 slot_uri: dct:issued
-                range: TemporalLiteral
+                any_of:
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             dct_modified:
                 slot_uri: dct:modified
                 any_of:
-                    - range: xsd_date
-                    - range: xsd_dateTime
-                    - range: xsd_gYear
-                    - range: xsd_gYearMonth
+                  - range: xsd_date
+                  - range: xsd_dateTime
+                  - range: xsd_gYear
+                  - range: xsd_gYearMonth
                 required: false
                 multivalued: false
             dct_spatial:
@@ -782,8 +834,6 @@ classes:
         class_uri: dct:Standard
     rdfs_Resource:
         class_uri: rdfs:Resource
-    TemporalLiteral:
-    TimeInstant:
     dct_LinguisticSystem:
         class_uri: dct:LinguisticSystem
     dct_ProvenanceStatement:
@@ -814,6 +864,12 @@ classes:
         class_uri: xsd:gYear
     xsd_gYearMonth:
         class_uri: xsd:gYearMonth
+    # dcatap_DateOrDateTimeDataType:
+        # any_of:
+          # - class_uri: xsd:date
+          # - class_uri: xsd:dateTime
+          # - class_uri: xsd:gYear
+          # - class_uri: xsd:gYearMonth
         
             
                 
