@@ -15,11 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-      - name: Run the script
-        run: python scripts/update_readme.py
+      - uses: actions/setup-python@v5with:
+          python-version: '3.x'  # Specify the Python version you need
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # If you have any dependencies
       - name: Execute Mermaid Converter script
         run: python Mermaid_Converter.py  # Execute your Python script
+      - name: Run the script
+        run: python scripts/update_readme.py
       - name: Commit files
         run: |
           git config --local user.name "hendrikborgelt"
