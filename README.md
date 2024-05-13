@@ -1,4 +1,8 @@
-```mermaid
+# Title
+
+some text
+
+```mermaid 
 classDiagram
 
 class `DatasetinSeries` {
@@ -154,6 +158,7 @@ class `foaf:agent` {
 `DatasetinSeries` --> "1..*" `DatasetinSeries` : dcat#58;prev
 `DatasetinSeries` --> "1..*" `DatasetinSeries` : dcat#58;next
 `DatasetinSeries` --> "1..*" `dcat:DatasetSeries` : dcat#58;inSeries
+
 `dcat:Catalog` --> "1..1" `foaf:agent` : dct#58;publisher
 `dcat:Catalog` --> "0..1" `dct:LicenseDocument` : dct#58;license
 `dcat:Catalog` --> "0..1" `dcat:DataService` : dcat#58;service
@@ -165,10 +170,13 @@ class `foaf:agent` {
 `dcat:Catalog` --> "1..*" `dct:PeriodOfTime` : dct#58;temporal
 `dcat:Catalog` --> "1..*" `dcat:CatalogRecord` : dcat#58;record
 `dcat:Catalog` --> "1..1" `foaf:agent` : dct#58;creator
+
 `dcat:CatalogRecord` --> "1..1" `dcat:Resource` : foaf#58;primaryTopic
 `dcat:CatalogRecord` --> "1..1" `dcat:CatalogRecord` : dct#58;source
+
 `dcat:DataService` --> "0..*" `dcat:Dataset` : dcat#58;servesDataset
 `dcat:DataService` --> "1..1" `dct:LicenseDocument` : dct#58;license
+
 `dcat:Dataset` --> "1..*" `skos:Concept` : dcat#58;themeTaxonomy
 `dcat:Dataset` --> "0..*" `dct:Location` : dct#58;spatial
 `dcat:Dataset` --> "0..*" `dct:PeriodOfTime` : dct#58;temporal
@@ -178,10 +186,12 @@ class `foaf:agent` {
 `dcat:Dataset` --> "1..*" `dcat:Dataset` : dcat#58;isVersionOf
 `dcat:Dataset` --> "1..*" `dcat:Dataset` : dct#58;source
 `dcat:Dataset` --> "1..*" `dcat:Distribution` : adms#58;sample
+
 `dcat:DatasetSeries` --> "0..1" `foaf:agent` : dct#58;publisher
 `dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;seriesMember
 `dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;first
 `dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;last
+
 `dcat:Distribution` --> "0..1" `dct:LicenseDocument` : dct#58;license
 `dcat:Distribution` --> "1..*" `dcat:DataService` : dcat#58;accessesService
 
@@ -189,4 +199,8 @@ class `foaf:agent` {
 
 
 
+
+
 ```
+
+more text
