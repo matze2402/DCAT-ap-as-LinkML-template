@@ -18,6 +18,8 @@ jobs:
       - uses: actions/setup-python@v5
       - name: Run the script
         run: python scripts/update_readme.py
+      - name: Execute Mermaid Converter script
+        run: python Mermaid_Converter.py  # Execute your Python script
       - name: Commit files
         run: |
           git config --local user.name "hendrikborgelt"
