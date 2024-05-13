@@ -26,7 +26,6 @@ page,foaf:page,optional,-,Document,foaf:Document,TRUE
 versionInfo,owl:versionInfo,optional,-,Literal,rdfs:Literal,FALSE
 qualifiedAttribution,prov:qualifiedAttribution,optional,-,Attribution,prov:Attribution,TRUE
 wasGeneratedBy,prov:wasGeneratedBy,optional,-,Activity,prov:Activity,TRUE
-themeTaxonomy,dcat:themeTaxonomy,mandatory,Concept,-,skos:Concept,TRUE
 spatial,dct:spatial,recommended,Location,-,dct:Location,TRUE
 temporal,dct:temporal,recommended,PeriodOfTime,-,dct:PeriodOfTime,TRUE
 publisher,dct:publisher,recommended,agent,-,foaf:agent,FALSE
