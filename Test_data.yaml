@@ -1,4 +1,0 @@
-Catalogs:
-    - service: test
-      publisher:
-        name: 'test'
