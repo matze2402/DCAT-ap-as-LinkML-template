@@ -4,6 +4,7 @@ import yaml
 from collections import OrderedDict
 import ruamel.yaml
 
+
 def read_yaml_file(yaml_file):
     with open(yaml_file, 'r') as file:
         yaml_data = yaml.safe_load(file)
@@ -14,6 +15,7 @@ def read_yaml_file(yaml_file):
 # data = read_yaml_file(yaml_file)
 # print(data)
 
+
 def convert_csv_to_yaml(folder_path, yaml_prefix_file, yaml_additional_classes_file, yaml_output_file ):
     data = {}
     # Iterate over all files in the folder
@@ -23,9 +25,6 @@ def convert_csv_to_yaml(folder_path, yaml_prefix_file, yaml_additional_classes_f
             with open(file_path, 'r') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    # class_uri = row['target_main_entity']
-                    # if class_uri not in data:
-                    #     data[class_uri] = {'class_uri': filename.replace('.csv','').replace(' ','_'), 'attributes': {}}
                     class_uri = filename.replace('.csv','').replace(' ','_')
                     if class_uri not in data:
                         data[class_uri] = {'class_uri': class_uri, 'attributes': {}}
@@ -42,16 +41,18 @@ def convert_csv_to_yaml(folder_path, yaml_prefix_file, yaml_additional_classes_f
     prefix_data = read_yaml_file(yaml_prefix_file)
     additional_classes_data = read_yaml_file(yaml_additional_classes_file)
     data_3 = {**data, **additional_classes_data}
-    prefix_data.update({'classes':data_3})
+    prefix_data.update({'classes': data_3})
     order = ['id', 'name', 'prefixes', 'imports', 'default_range', 'classes']
     ordered_dict = OrderedDict((key, prefix_data[key]) for key in order if key in prefix_data)
     yaml = ruamel.yaml.YAML()
-    with open(yaml_output_file, 'w') as file:
+    with open(yaml_output_file, 'w+') as file:
         yaml.dump(dict(ordered_dict), file)
-    # with open(yaml_file, 'w') as file:
-    #     yaml.dump(data, file)
+
+
 # Usage
-convert_csv_to_yaml('CSV_Files',
+
+convert_csv_to_yaml('CSV_Files/',
                     'Prefixes_for_DCAT_LinkML_template.yaml',
                     'external_resources_for_DCAT_in_LinkML.yaml',
                     'DCAT_AP_via_CSV.yaml')
+
