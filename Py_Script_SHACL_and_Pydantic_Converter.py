@@ -16,23 +16,17 @@ You will therefore need to delete the commenting marks in the second run.
 So the last import statement above should be uncommented and the last six lines should be uncommented in the second run.
 """
 
-with open("./LinkML_template_of_DCATap_neu3_anderes_Konzept.yaml") as file:
+with open("./LinkML_template_for_DCATap_20240417.yaml") as file:
     data = file.read()
 
-# gen_ser = PythonGenerator(data).serialize()
+gen_ser = PythonGenerator(data).serialize()
 gen_yuml_ser = YumlGenerator(data).serialize()
 gen_shacl_ser = ShaclGenerator(data).serialize()
 
-# with open("./LinkML_template_of_DCATap.py", 'w') as outfile:
-#     outfile.write(gen_ser)
+with open("./LinkML_template_of_DCATap_20240417.py", 'w') as outfile:
+    outfile.write(gen_ser)
 
-with open("./LinkML_template_of_DCATap_shacl.ttl", 'w') as outfile:
+with open("./LinkML_template_for_DCATap_20240417.shacl.ttl", 'w') as outfile:
     outfile.write(gen_shacl_ser)
 
-# test_class = yaml.load(data, Loader=yaml.FullLoader)
-
-with open("./Test_data.yaml") as file:
-    data2 = file.read()
-
-# model = yaml_loader.load(data2, target_class=Container)
 
