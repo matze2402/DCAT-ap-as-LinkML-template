@@ -9,18 +9,18 @@ class `DatasetinSeries` {
   # optional
   dct#58;accuralPeriodicity dct#58;Frequency [1...*] 
 }
-class `dcat:Catalog` {
+class `dcat:DatasetSeries` {
   # mandatory
   dcat#58;description rdfs#58;Literal [1...*] 
-  dct#58;title rdfs#58;Literal [1...*] 
   # recommended
-  dcat#58;themeTaxonomy skos#58;Concept [0...*] 
-  dct#58;issued xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [0...1] 
-  dct#58;language dct#58;LinguisticSystem [0...*] 
-  dct#58;modified xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [0...1] 
-  foaf#58;homepage foaf#58;Document [0...1] 
+  dct#58;title rdfs#58;Literal [0...*] 
+  dcat#58;contactPoint vcard#58;Kind [0...*] 
   # optional
-  dct#58;rights dct#58;RightsStatement [1...1] 
+  dct#58;accuralPeriodicity dct#58;Frequency [1...1] 
+  dct#58;issued xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [1...1] 
+  dct#58;modified xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [1...*] 
+  dct#58;spatial dct#58;Location [1...*] 
+  dct#58;temporal dct#58;PeriodOfTime [1...*] 
 }
 class `dcat:CatalogRecord` {
   # mandatory
@@ -34,16 +34,20 @@ class `dcat:CatalogRecord` {
   dct#58;language dct#58;LinguisticSystem [1...*] 
   dct#58;title rdfs#58;Literal [1...*] 
 }
-class `dcat:DataService` {
+class `dct:Location` {
   # mandatory
-  dcat#58;endpointURL rdfs#58;Resource [1...*] 
-  dct#58;title rdfs#58;Literal [1...*] 
   # recommended
-  dcat#58;endpointDescription rdfs#58;Resource [0...*] 
+  dcat#58;bbox rdfs#58;Literal [0...1] 
+  dcat#58;centroid rdfs#58;Literal [0...1] 
   # optional
-  dct#58;accessRights dct#58;RightsStatement [1...1] 
-  dcat#58;description rdfs#58;Literal [1...*] 
-  dct#58;format dct#58;MediaTypeOrExtent [1...*] 
+  lcon#58;geometry lcon#58;Geometry [1...1] 
+}
+class `foaf:agent` {
+  # mandatory
+  foaf#58;name rdfs#58;Literal [1...*] 
+  # recommended
+  dct#58;type skos#58;Concept [0...1] 
+  # optional
 }
 class `dcat:Dataset` {
   # mandatory
@@ -77,18 +81,40 @@ class `dcat:Dataset` {
   prov#58;qualifiedAttribution prov#58;Attribution [1...*] 
   prov#58;wasGeneratedBy prov#58;Activity [1...*] 
 }
-class `dcat:DatasetSeries` {
+class `dcat:DataService` {
+  # mandatory
+  dcat#58;endpointURL rdfs#58;Resource [1...*] 
+  dct#58;title rdfs#58;Literal [1...*] 
+  # recommended
+  dcat#58;endpointDescription rdfs#58;Resource [0...*] 
+  # optional
+  dct#58;accessRights dct#58;RightsStatement [1...1] 
+  dcat#58;description rdfs#58;Literal [1...*] 
+  dct#58;format dct#58;MediaTypeOrExtent [1...*] 
+}
+class `dcat:Catalog` {
   # mandatory
   dcat#58;description rdfs#58;Literal [1...*] 
+  dct#58;title rdfs#58;Literal [1...*] 
   # recommended
-  dct#58;title rdfs#58;Literal [0...*] 
-  dcat#58;contactPoint vcard#58;Kind [0...*] 
+  dcat#58;themeTaxonomy skos#58;Concept [0...*] 
+  dct#58;issued xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [0...1] 
+  dct#58;language dct#58;LinguisticSystem [0...*] 
+  dct#58;modified xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [0...1] 
+  foaf#58;homepage foaf#58;Document [0...1] 
   # optional
-  dct#58;accuralPeriodicity dct#58;Frequency [1...1] 
-  dct#58;issued xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [1...1] 
-  dct#58;modified xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [1...*] 
-  dct#58;spatial dct#58;Location [1...*] 
-  dct#58;temporal dct#58;PeriodOfTime [1...*] 
+  dct#58;rights dct#58;RightsStatement [1...1] 
+}
+class `dct:LicenseDocument` {
+  # mandatory
+  # recommended
+  dct#58;type skos#58;Concept [0...*] 
+  # optional
+}
+class `dcat:Resource` {
+  # mandatory
+  # recommended
+  # optional
 }
 class `dcat:Distribution` {
   # mandatory
@@ -116,25 +142,6 @@ class `dcat:Distribution` {
   odrl#58;hasPolicy odrl#58;hasPolicy [1...1] 
   spdx#58;checksum spdx#58;Checksum [1...1] 
 }
-class `dcat:Resource` {
-  # mandatory
-  # recommended
-  # optional
-}
-class `dct:LicenseDocument` {
-  # mandatory
-  # recommended
-  dct#58;type skos#58;Concept [0...*] 
-  # optional
-}
-class `dct:Location` {
-  # mandatory
-  # recommended
-  dcat#58;bbox rdfs#58;Literal [0...1] 
-  dcat#58;centroid rdfs#58;Literal [0...1] 
-  # optional
-  lcon#58;geometry lcon#58;Geometry [1...1] 
-}
 class `dct:PeriodOfTime` {
   # mandatory
   # recommended
@@ -144,16 +151,31 @@ class `dct:PeriodOfTime` {
   time#58;hasBeginning xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [1...*] 
   time#58;hasEnd xsd#58;date; xsd#58;dateTime; xsd#58;gYear; xsd#58;gYearMonth [1...1] 
 }
-class `foaf:agent` {
-  # mandatory
-  foaf#58;name rdfs#58;Literal [1...*] 
-  # recommended
-  dct#58;type skos#58;Concept [0...1] 
-  # optional
-}
 `DatasetinSeries` --> "1..*" `DatasetinSeries` : dcat#58;prev
 `DatasetinSeries` --> "1..*" `DatasetinSeries` : dcat#58;next
 `DatasetinSeries` --> "1..*" `dcat:DatasetSeries` : dcat#58;inSeries
+
+`dcat:DatasetSeries` --> "0..1" `foaf:agent` : dct#58;publisher
+`dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;seriesMember
+`dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;first
+`dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;last
+
+`dcat:CatalogRecord` --> "1..1" `dcat:Resource` : foaf#58;primaryTopic
+`dcat:CatalogRecord` --> "1..1" `dcat:CatalogRecord` : dct#58;source
+
+
+
+`dcat:Dataset` --> "0..*" `dct:Location` : dct#58;spatial
+`dcat:Dataset` --> "0..*" `dct:PeriodOfTime` : dct#58;temporal
+`dcat:Dataset` --> "0..1" `foaf:agent` : dct#58;publisher
+`dcat:Dataset` --> "0..*" `dcat:Distribution` : dcat#58;distribution
+`dcat:Dataset` --> "1..*" `dcat:Dataset` : dcat#58;hasVersion
+`dcat:Dataset` --> "1..*" `dcat:Dataset` : dcat#58;isVersionOf
+`dcat:Dataset` --> "1..*" `dcat:Dataset` : dct#58;source
+`dcat:Dataset` --> "1..*" `dcat:Distribution` : adms#58;sample
+
+`dcat:DataService` --> "0..*" `dcat:Dataset` : dcat#58;servesDataset
+`dcat:DataService` --> "1..1" `dct:LicenseDocument` : dct#58;license
 
 `dcat:Catalog` --> "1..1" `foaf:agent` : dct#58;publisher
 `dcat:Catalog` --> "0..1" `dct:LicenseDocument` : dct#58;license
@@ -167,33 +189,10 @@ class `foaf:agent` {
 `dcat:Catalog` --> "1..*" `dcat:CatalogRecord` : dcat#58;record
 `dcat:Catalog` --> "1..1" `foaf:agent` : dct#58;creator
 
-`dcat:CatalogRecord` --> "1..1" `dcat:Resource` : foaf#58;primaryTopic
-`dcat:CatalogRecord` --> "1..1" `dcat:CatalogRecord` : dct#58;source
 
-`dcat:DataService` --> "0..*" `dcat:Dataset` : dcat#58;servesDataset
-`dcat:DataService` --> "1..1" `dct:LicenseDocument` : dct#58;license
-
-`dcat:Dataset` --> "1..*" `skos:Concept` : dcat#58;themeTaxonomy
-`dcat:Dataset` --> "0..*" `dct:Location` : dct#58;spatial
-`dcat:Dataset` --> "0..*" `dct:PeriodOfTime` : dct#58;temporal
-`dcat:Dataset` --> "0..1" `foaf:agent` : dct#58;publisher
-`dcat:Dataset` --> "0..*" `dcat:Distribution` : dcat#58;distribution
-`dcat:Dataset` --> "1..*" `dcat:Dataset` : dcat#58;hasVersion
-`dcat:Dataset` --> "1..*" `dcat:Dataset` : dcat#58;isVersionOf
-`dcat:Dataset` --> "1..*" `dcat:Dataset` : dct#58;source
-`dcat:Dataset` --> "1..*" `dcat:Distribution` : adms#58;sample
-
-`dcat:DatasetSeries` --> "0..1" `foaf:agent` : dct#58;publisher
-`dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;seriesMember
-`dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;first
-`dcat:DatasetSeries` --> "1..*" `DatasetinSeries` : dcat#58;last
 
 `dcat:Distribution` --> "0..1" `dct:LicenseDocument` : dct#58;license
 `dcat:Distribution` --> "1..*" `dcat:DataService` : dcat#58;accessesService
-
-
-
-
 
 
 
