@@ -1,0 +1,37 @@
+attribute,curie,cardinallity,target_main_entity,target_side_entity,target_curie,multivalued
+description,dcat:description,mandatory,-,Literal,rdfs:Literal,TRUE
+title,dct:title,mandatory,-,Literal,rdfs:Literal,TRUE
+contactPoint,dct:contactPoint,recommended,-,Kind,vcard:Kind,TRUE
+keyword,dct:keyword,recommended,-,Literal,rdfs:Literal,TRUE
+theme,dct:theme,recommended,-,Concept,skos:Concept,TRUE
+identifier,adms:identifier,optional,-,Identifier,adms:Identifier,TRUE
+versionNotes,adms:versionNotes,optional,-,Literal,rdfs:Literal,TRUE
+landingPage,dcat:landingPage,optional,-,Document,foaf:Document,TRUE
+qualifiedRelation,dcat:qualifiedRelation,optional,-,Relationship,dcat:Relationship,TRUE
+spatialResolutionInMeters,dcat:spatialResolutionInMeters,optional,-,decimal,xsd:decimal,TRUE
+temporalResolution,dcat:temporalResolution,optional,-,duration,xsd:duration,TRUE
+version,dcat:version,optional,-,Literal,rdfs:Literal,TRUE
+accessRights,dct:accessRights,optional,-,Frequency,dct:Frequency,FALSE
+accuralPeriodicity,dct:accuralPeriodicity,optional,-,Frequency,dct:Frequency,FALSE
+conformsTo,dct:conformsTo,optional,-,Standard,dct:Standard,TRUE
+identifier,dct:identifier,optional,-,Literal,rdfs:Literal,TRUE
+isReferencedBy,dct:isReferencedBy,optional,-,Resource,rdfs:Resource,TRUE
+issued,dct:issued,optional,-,temporalLiteral,xsd:date; xsd:dateTime; xsd:gYear; xsd:gYearMonth,FALSE
+language,dct:language,optional,-,LinguisticSystem,dct:LinguisticSystem,TRUE
+modified,dct:modified,optional,-,temporalLiteral,xsd:date; xsd:dateTime; xsd:gYear; xsd:gYearMonth,FALSE
+provenance,dct:provenance,optional,-,ProvenanceStatement,dct:ProvenanceStatement,TRUE
+relation,dct:relation,optional,-,Resource,rdfs:Resource,TRUE
+type,dct:type,optional,-,Concept,skos:Concept,FALSE
+page,foaf:page,optional,-,Document,foaf:Document,TRUE
+versionInfo,owl:versionInfo,optional,-,Literal,rdfs:Literal,FALSE
+qualifiedAttribution,prov:qualifiedAttribution,optional,-,Attribution,prov:Attribution,TRUE
+wasGeneratedBy,prov:wasGeneratedBy,optional,-,Activity,prov:Activity,TRUE
+themeTaxonomy,dcat:themeTaxonomy,mandatory,Concept,-,skos:Concept,TRUE
+spatial,dct:spatial,recommended,Location,-,dct:Location,TRUE
+temporal,dct:temporal,recommended,PeriodOfTime,-,dct:PeriodOfTime,TRUE
+publisher,dct:publisher,recommended,agent,-,foaf:agent,FALSE
+distribution,dcat:distribution,recommended,Distribution,-,dcat:Distribution,TRUE
+hasVersion,dcat:hasVersion,optional,Dataset,-,dcat:Dataset,TRUE
+isVersionOf,dcat:isVersionOf,optional,Dataset,-,dcat:Dataset,TRUE
+source,dct:source,optional,Dataset,-,dcat:Dataset,TRUE
+sample,adms:sample,optional,Distribution,-,dcat:Distribution,TRUE
