@@ -51,7 +51,7 @@ def convert_csv_to_yaml(folder_path, yaml_prefix_file, yaml_additional_classes_f
     # with open(yaml_file, 'w') as file:
     #     yaml.dump(data, file)
 # Usage
-data_2 = convert_csv_to_yaml('CSV_Files',
-                                'Prefixes_for_DCAT_LinkML_template.yaml',
-                                'external_resources_for_DCAT_in_LinkML.yaml',
+convert_csv_to_yaml('CSV_Files',
+                    'Prefixes_for_DCAT_LinkML_template.yaml',
+                    'external_resources_for_DCAT_in_LinkML.yaml',
                     'DCAT_AP_via_CSV.yaml')
