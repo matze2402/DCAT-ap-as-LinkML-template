@@ -1,6 +1,7 @@
-# Title
+# Tools vor visualizing and modifying LinkML via CSV templates
 
-some text
+This is a GitHub repo which should have all tools for generating a Mermaid representation of an Schema which is defined in CSV files as well as generating the respective LinkML and SHACL schema out of it.
+A representation of the schema can be found down below:
 
 ```mermaid 
 classDiagram
@@ -202,4 +203,4 @@ class `dct:PeriodOfTime` {
 
 ```
 
-more text
+To modify this schema, just modify the CSV files of the respective classes.
