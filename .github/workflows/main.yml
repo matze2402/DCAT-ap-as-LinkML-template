@@ -22,10 +22,14 @@ jobs:
         run: pip install -r requirements.txt  # If you have any dependencies
       - name: Execute gen_DCAT-APsLinkMLviaCSV script
         run: python scripts/gen_DCAT-APsLinkMLviaCSV.py  # Execute your Python script
+      - name: List directory contents
+        run: ls
       - name: Execute Mermaid Converter script
         run: python scripts/Mermaid_Converter.py  # Execute your Python script
-      - name: Move YAML file to main repo directory
-        run: mv 'DCAT_AP_via_CSV.yaml' ../
+      - name: List directory contents
+        run: ls
+      # - name: Move YAML file to main repo directory
+      #   run: mv 'DCAT_AP_via_CSV.yaml' ../
       - name: List directory contents
         run: ls
       - name: Run the script
