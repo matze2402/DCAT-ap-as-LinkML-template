@@ -36,6 +36,7 @@ jobs:
           git config --local user.name "Github Action"
           git config --local user.email "action@github.com"
           git add README.md DCAT_AP_via_CSV.yaml
+          git push
           # git add tags/*.md
           # Thanks for the trick, ChatGPT!
           # if git diff-index --quiet HEAD --; then
@@ -44,8 +45,8 @@ jobs:
           #   git commit -m "Updated TOC"
           #   echo "changes_to_push=true" >> $GITHUB_ENV
           # fi
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     force: true
