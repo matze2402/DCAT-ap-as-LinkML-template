@@ -33,9 +33,10 @@ jobs:
       - name: Commit files
         #if: "! git status --short" # check if there are changes to commit
         run: |
-          git config --local user.name "Github Action"
-          git config --local user.email "action@github.com"
-          git add README.md DCAT_AP_via_CSV.yaml
+          git config --local user.name "hendrikborgelt"
+          git config --local user.email "hendrikborgelt@tu-dortmund.de"
+          git add README.md 
+          git add DCAT_AP_via_CSV.yaml
           git push
           # git add tags/*.md
           # Thanks for the trick, ChatGPT!
