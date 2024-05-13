@@ -28,10 +28,6 @@ jobs:
         run: python scripts/Mermaid_Converter.py  # Execute your Python script
       - name: List directory contents
         run: ls
-      # - name: Move YAML file to main repo directory
-      #   run: mv 'DCAT_AP_via_CSV.yaml' ../
-      - name: List directory contents
-        run: ls
       - name: Run the script
         run: python scripts/update_readme.py
       - name: Commit files
@@ -39,15 +35,15 @@ jobs:
         run: |
           git config --local user.name "Github Action"
           git config --local user.email "action@github.com"
-          git add '*.md' # DCAT_AP_via_CSV.yaml
+          git add README.md DCAT_AP_via_CSV.yaml
           # git add tags/*.md
           # Thanks for the trick, ChatGPT!
-          if git diff-index --quiet HEAD --; then
-            echo "changes_to_push=false" >> $GITHUB_ENV
-          else
-            git commit -m "Updated TOC"
-            echo "changes_to_push=true" >> $GITHUB_ENV
-          fi
+          # if git diff-index --quiet HEAD --; then
+          #   echo "changes_to_push=false" >> $GITHUB_ENV
+          # else
+          #   git commit -m "Updated TOC"
+          #   echo "changes_to_push=true" >> $GITHUB_ENV
+          # fi
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
