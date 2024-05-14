@@ -6,3 +6,4 @@ A representation of the schema can be found down below:
 {TOC}
 
 To modify this schema, just modify the CSV files of the respective classes.
+The readme should update the Diagramm via a GitHub action itself.
