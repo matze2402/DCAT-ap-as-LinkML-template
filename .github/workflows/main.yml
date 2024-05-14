@@ -24,7 +24,8 @@ jobs:
         run: python scripts/gen_DCAT-APsLinkMLviaCSV.py  # Execute your Python script
       - name: List directory contents
         run: ls
-      - name: Commit files|
+      - name: Commit files
+        run: |
           git config --local user.name "hendrikborgelt"
           git config --local user.email "hendrikborgelt@tu-dortmund.de"
           git add DCAT_AP_via_CSV.yaml
@@ -43,7 +44,8 @@ jobs:
         run: python scripts/Mermaid_Converter.py  # Execute your Python script
       - name: List directory contents
         run: ls
-      - name: Commit files|
+      - name: Commit files
+        run: |
           git config --local user.name "hendrikborgelt"
           git config --local user.email "hendrikborgelt@tu-dortmund.de"
           git add Mermaid_Diagramm.md
@@ -62,7 +64,8 @@ jobs:
         run: python scripts/update_readme.py
       - name: List directory contents
         run: ls
-      - name: Commit files|
+      - name: Commit files
+        run: |
           git config --local user.name "hendrikborgelt"
           git config --local user.email "hendrikborgelt@tu-dortmund.de"
           git add README.md
