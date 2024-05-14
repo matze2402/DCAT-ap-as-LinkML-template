@@ -204,3 +204,4 @@ class `dct:PeriodOfTime` {
 ```
 
 To modify this schema, just modify the CSV files of the respective classes.
+The readme should update the Diagramm via a GitHub action itself.
