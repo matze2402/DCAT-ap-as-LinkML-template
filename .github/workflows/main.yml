@@ -12,8 +12,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   job_1: # build LinkML Schema
-	  runs-on: ubuntu-latest
-	  steps:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
@@ -31,8 +31,8 @@ jobs:
           git push
   job_2: # build Mermaid_Visualization
     needs: job_1
-	  runs-on: ubuntu-latest
-	  steps:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
@@ -50,8 +50,8 @@ jobs:
           git push
   job_3: # build Mermaid_Visualization
     needs: job_2
-	  runs-on: ubuntu-latest
-	  steps:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
