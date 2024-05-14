@@ -11,9 +11,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
-    runs-on: ubuntu-latest
-    steps:
+  job_1: # build LinkML Schema
+	runs-on: ubuntu-latest
+	steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
@@ -24,30 +24,49 @@ jobs:
         run: python scripts/gen_DCAT-APsLinkMLviaCSV.py  # Execute your Python script
       - name: List directory contents
         run: ls
+      - name: Commit files|
+          git config --local user.name "hendrikborgelt"
+          git config --local user.email "hendrikborgelt@tu-dortmund.de"
+          git add DCAT_AP_via_CSV.yaml
+          git push
+  job_2: # build Mermaid_Visualization
+    needs: job_1
+	runs-on: ubuntu-latest
+	steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'  # Specify the Python version you need
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # If you have any dependencies
       - name: Execute Mermaid Converter script
         run: python scripts/Mermaid_Converter.py  # Execute your Python script
       - name: List directory contents
         run: ls
-      - name: Run the script
-        run: python scripts/update_readme.py
-      - name: Commit files
-        #if: "! git status --short" # check if there are changes to commit
-        run: |
+      - name: Commit files|
           git config --local user.name "hendrikborgelt"
           git config --local user.email "hendrikborgelt@tu-dortmund.de"
-          git add README.md 
-          git add DCAT_AP_via_CSV.yaml
+          git add Mermaid_Diagramm.md
           git push
-          # git add tags/*.md
-          # Thanks for the trick, ChatGPT!
-          # if git diff-index --quiet HEAD --; then
-          #   echo "changes_to_push=false" >> $GITHUB_ENV
-          # else
-          #   git commit -m "Updated TOC"
-          #   echo "changes_to_push=true" >> $GITHUB_ENV
-          # fi
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     force: true
+  job_3: # build Mermaid_Visualization
+    needs: job_2
+	runs-on: ubuntu-latest
+	steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'  # Specify the Python version you need
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # If you have any dependencies
+      - name: Run the update_readme script
+        run: python scripts/update_readme.py
+      - name: List directory contents
+        run: ls
+      - name: Commit files|
+          git config --local user.name "hendrikborgelt"
+          git config --local user.email "hendrikborgelt@tu-dortmund.de"
+          git add README.md
+          git push
+  
+  
+  
