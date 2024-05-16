@@ -1,0 +1,1043 @@
+name: TEMP
+id: TEMP
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  TEMP: https://example.org/TEMP/
+  spdx: https://spdx.org/licenses/
+  owl: http://www.w3.org/2002/07/owl#
+  dcatap: http://example.org/dcatap/
+  adms: http://www.w3.org/ns/adms#
+  foaf: http://xmlns.com/foaf/0.1/
+  dcat: http://www.w3.org/ns/dcat#
+  lcon: http://example.org/lcon/
+  prov: http://www.w3.org/ns/prov#
+  dct: http://purl.org/dc/terms/
+  time: http://www.w3.org/2006/time#
+default_prefix: TEMP
+default_range: string
+slots:
+  dct_description:
+    from_schema: TEMP
+    slot_uri: dcat:description
+    multivalued: true
+    range: rdfs_Literal
+    required: true
+  dct_title:
+    from_schema: TEMP
+    slot_uri: dct:title
+    multivalued: true
+    range: rdfs_Literal
+    required: true
+  dct_contactPoint:
+    from_schema: TEMP
+    slot_uri: dct:contactPoint
+    multivalued: true
+    range: vcard_Kind
+  dct_keyword:
+    from_schema: TEMP
+    slot_uri: dct:keyword
+    multivalued: true
+    range: rdfs_Literal
+  dct_theme:
+    from_schema: TEMP
+    slot_uri: dct:theme
+    multivalued: true
+    range: skos_Concept
+  adms_identifier:
+    from_schema: TEMP
+    slot_uri: adms:identifier
+    multivalued: true
+    range: adms_Identifier
+  adms_versionNotes:
+    from_schema: TEMP
+    slot_uri: adms:versionNotes
+    multivalued: true
+    range: rdfs_Literal
+  dcat_landingPage:
+    from_schema: TEMP
+    slot_uri: dcat:landingPage
+    multivalued: true
+    range: foaf_Document
+  dcat_qualifiedRelation:
+    from_schema: TEMP
+    slot_uri: dcat:qualifiedRelation
+    multivalued: true
+    range: dcat_Relationship
+  dcat_spatialResolutionInMeters:
+    from_schema: TEMP
+    slot_uri: dcat:spatialResolutionInMeters
+    multivalued: true
+    range: xsd_decimal
+  dcat_temporalResolution:
+    from_schema: TEMP
+    slot_uri: dcat:temporalResolution
+    multivalued: true
+    range: xsd_duration
+  dcat_version:
+    from_schema: TEMP
+    slot_uri: dcat:version
+    multivalued: true
+    range: rdfs_Literal
+  dct_accessRights:
+    from_schema: TEMP
+    slot_uri: dct:accessRights
+    range: dct_Frequency
+  dct_accuralPeriodicity:
+    from_schema: TEMP
+    slot_uri: dct:accuralPeriodicity
+    range: dct_Frequency
+  dct_conformsTo:
+    from_schema: TEMP
+    slot_uri: dct:conformsTo
+    multivalued: true
+    range: dct_Standard
+  dct_identifier:
+    from_schema: TEMP
+    slot_uri: dct:identifier
+    multivalued: true
+    range: rdfs_Literal
+  dct_isReferencedBy:
+    from_schema: TEMP
+    slot_uri: dct:isReferencedBy
+    multivalued: true
+    range: rdfs_Resource
+  dct_issued:
+    from_schema: TEMP
+    slot_uri: dct:issued
+  dct_language:
+    from_schema: TEMP
+    slot_uri: dct:language
+    multivalued: true
+    range: dct_LinguisticSystem
+  dct_modified:
+    from_schema: TEMP
+    slot_uri: dct:modified
+  dct_provenance:
+    from_schema: TEMP
+    slot_uri: dct:provenance
+    multivalued: true
+    range: dct_ProvenanceStatement
+  dct_relation:
+    from_schema: TEMP
+    slot_uri: dct:relation
+    multivalued: true
+    range: rdfs_Resource
+  dct_type:
+    from_schema: TEMP
+    slot_uri: dct:type
+    range: skos_Concept
+  foaf_page:
+    from_schema: TEMP
+    slot_uri: foaf:page
+    multivalued: true
+    range: foaf_Document
+  owl_versionInfo:
+    from_schema: TEMP
+    slot_uri: owl:versionInfo
+    range: rdfs_Literal
+  prov_qualifiedAttribution:
+    from_schema: TEMP
+    slot_uri: prov:qualifiedAttribution
+    multivalued: true
+    range: prov_Attribution
+  prov_wasGeneratedBy:
+    from_schema: TEMP
+    slot_uri: prov:wasGeneratedBy
+    multivalued: true
+    range: prov_Activity
+  dcat_themeTaxonomy:
+    from_schema: TEMP
+    slot_uri: dcat:themeTaxonomy
+    multivalued: true
+    range: skos_Concept
+  dct_spatial:
+    from_schema: TEMP
+    slot_uri: dct:spatial
+    multivalued: true
+    range: dct_Location
+  dct_temporal:
+    from_schema: TEMP
+    slot_uri: dct:temporal
+    multivalued: true
+    range: dct_PeriodOfTime
+  dct_publisher:
+    from_schema: TEMP
+    slot_uri: dct:publisher
+    range: foaf_agent
+  dcat_distribution:
+    from_schema: TEMP
+    slot_uri: dcat:distribution
+    multivalued: true
+    range: dcat_Distribution
+  dcat_hasVersion:
+    from_schema: TEMP
+    slot_uri: dcat:hasVersion
+    multivalued: true
+    range: dcat_Dataset
+  dcat_isVersionOf:
+    from_schema: TEMP
+    slot_uri: dcat:isVersionOf
+    multivalued: true
+    range: dcat_Dataset
+  dct_source:
+    from_schema: TEMP
+    slot_uri: dct:source
+    multivalued: true
+    range: dcat_Dataset
+  adms_sample:
+    from_schema: TEMP
+    slot_uri: adms:sample
+    multivalued: true
+    range: dcat_Distribution
+  dcat_accessURL:
+    from_schema: TEMP
+    slot_uri: dcat:accessURL
+    multivalued: true
+    range: rdfs_Resource
+    required: true
+  dcatap_availability:
+    from_schema: TEMP
+    slot_uri: dcatap:availability
+    range: skos_Concept
+  dct_format:
+    from_schema: TEMP
+    slot_uri: dct:format
+    range: dct_MediaTypeOrExtent
+  adms_status:
+    from_schema: TEMP
+    slot_uri: adms:status
+    range: skos_Concept
+  dcat_byteSize:
+    from_schema: TEMP
+    slot_uri: dcat:byteSize
+    range: xsd_nonNegativInteger
+  dcat_compressFormat:
+    from_schema: TEMP
+    slot_uri: dcat:compressFormat
+    range: dct_MediaType
+  dcat_downloadURL:
+    from_schema: TEMP
+    slot_uri: dcat:downloadURL
+    multivalued: true
+    range: rdfs_Resource
+  dcat_mediaType:
+    from_schema: TEMP
+    slot_uri: dcat:compressFormat
+    range: dct_MediaType
+  dcat_packageFormat:
+    from_schema: TEMP
+    slot_uri: dcat:packageFormat
+    range: dct_MediaType
+  dct_rights:
+    from_schema: TEMP
+    slot_uri: dct:rights
+    range: dct_RightsStatement
+  odrl_hasPolicy:
+    from_schema: TEMP
+    slot_uri: odrl:hasPolicy
+    range: odrl_hasPolicy
+  spdx_checksum:
+    from_schema: TEMP
+    slot_uri: spdx:checksum
+    range: spdx_Checksum
+  dct_license:
+    from_schema: TEMP
+    slot_uri: dct:license
+    range: dct_LicenseDocument
+  dcat_accessesService:
+    from_schema: TEMP
+    slot_uri: dcat:accessesService
+    multivalued: true
+    range: dcat_DataService
+  foaf_homepage:
+    from_schema: TEMP
+    slot_uri: foaf:homepage
+    range: foaf_Document
+  dcat_service:
+    from_schema: TEMP
+    slot_uri: dcat:service
+    multivalued: true
+    range: dcat_DataService
+  dcat_dataset:
+    from_schema: TEMP
+    slot_uri: dcat:dataset
+    multivalued: true
+    range: dcat_Dataset
+  dcat_catalog:
+    from_schema: TEMP
+    slot_uri: dcat:catalog
+    multivalued: true
+    range: dcat_Catalog
+  dct_hasPart:
+    from_schema: TEMP
+    slot_uri: dct:hasPart
+    multivalued: true
+    range: dcat_Catalog
+  dct_isPart:
+    from_schema: TEMP
+    slot_uri: dct:isPart
+    range: dcat_Catalog
+  dcat_record:
+    from_schema: TEMP
+    slot_uri: dcat:record
+    multivalued: true
+    range: dcat_CatalogRecord
+  dct_creator:
+    from_schema: TEMP
+    slot_uri: dct:creator
+    range: foaf_agent
+  dcat_endpointURL:
+    from_schema: TEMP
+    slot_uri: dcat:endpointURL
+    multivalued: true
+    range: rdfs_Resource
+    required: true
+  dcat_endpointDescription:
+    from_schema: TEMP
+    slot_uri: dcat:endpointDescription
+    multivalued: true
+    range: rdfs_Resource
+  dcat_servesDataset:
+    from_schema: TEMP
+    slot_uri: dcat:servesDataset
+    multivalued: true
+    range: dcat_Dataset
+  foaf_primaryTopic:
+    from_schema: TEMP
+    slot_uri: foaf:primaryTopic
+    range: dcat_Resource
+    required: true
+  dcat_bbox:
+    from_schema: TEMP
+    slot_uri: dcat:bbox
+    range: rdfs_Literal
+  dcat_centroid:
+    from_schema: TEMP
+    slot_uri: dcat:centroid
+    range: rdfs_Literal
+  lcon_geometry:
+    from_schema: TEMP
+    slot_uri: lcon:geometry
+    range: lcon_Geometry
+  dcat_endDate:
+    from_schema: TEMP
+    slot_uri: dcat:endDate
+  dcat_startDate:
+    from_schema: TEMP
+    slot_uri: dcat:startDate
+  time_hasBeginning:
+    from_schema: TEMP
+    slot_uri: time:hasBeginning
+  time_hasEnd:
+    from_schema: TEMP
+    slot_uri: time:hasEnd
+  foaf_name:
+    from_schema: TEMP
+    slot_uri: foaf:name
+    multivalued: true
+    range: rdfs_Literal
+    required: true
+  dcat_prev:
+    from_schema: TEMP
+    slot_uri: dcat:prev
+    multivalued: true
+    range: DatasetinSeries
+  dcat_next:
+    from_schema: TEMP
+    slot_uri: dcat:next
+    multivalued: true
+    range: DatasetinSeries
+  dcat_inSeries:
+    from_schema: TEMP
+    slot_uri: dcat:inSeries
+    multivalued: true
+    range: dcat_DatasetSeries
+  dcat_contactPoint:
+    from_schema: TEMP
+    slot_uri: dcat:contactPoint
+    multivalued: true
+    range: vcard_Kind
+  dcat_seriesMember:
+    from_schema: TEMP
+    slot_uri: dcat:seriesMember
+    multivalued: true
+    range: DatasetinSeries
+  dcat_first:
+    from_schema: TEMP
+    slot_uri: dcat:first
+    multivalued: true
+    range: DatasetinSeries
+  dcat_last:
+    from_schema: TEMP
+    slot_uri: dcat:last
+    multivalued: true
+    range: DatasetinSeries
+classes:
+  dcat_Dataset:
+    from_schema: TEMP
+    slots:
+    - dct_description
+    - dct_title
+    - dct_contactPoint
+    - dct_keyword
+    - dct_theme
+    - adms_identifier
+    - adms_versionNotes
+    - dcat_landingPage
+    - dcat_qualifiedRelation
+    - dcat_spatialResolutionInMeters
+    - dcat_temporalResolution
+    - dcat_version
+    - dct_accessRights
+    - dct_accuralPeriodicity
+    - dct_conformsTo
+    - dct_identifier
+    - dct_isReferencedBy
+    - dct_issued
+    - dct_language
+    - dct_modified
+    - dct_provenance
+    - dct_relation
+    - dct_type
+    - foaf_page
+    - owl_versionInfo
+    - prov_qualifiedAttribution
+    - prov_wasGeneratedBy
+    - dcat_themeTaxonomy
+    - dct_spatial
+    - dct_temporal
+    - dct_publisher
+    - dcat_distribution
+    - dcat_hasVersion
+    - dcat_isVersionOf
+    - dct_source
+    - adms_sample
+    slot_usage:
+      dct_description:
+        slot_uri: dcat:description
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dct_title:
+        slot_uri: dct:title
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dct_contactPoint:
+        slot_uri: dct:contactPoint
+        multivalued: true
+        range: vcard_Kind
+      dct_keyword:
+        slot_uri: dct:keyword
+        multivalued: true
+        range: rdfs_Literal
+      dct_theme:
+        slot_uri: dct:theme
+        multivalued: true
+        range: skos_Concept
+      adms_identifier:
+        slot_uri: adms:identifier
+        multivalued: true
+        range: adms_Identifier
+      adms_versionNotes:
+        slot_uri: adms:versionNotes
+        multivalued: true
+        range: rdfs_Literal
+      dcat_landingPage:
+        slot_uri: dcat:landingPage
+        multivalued: true
+        range: foaf_Document
+      dcat_qualifiedRelation:
+        slot_uri: dcat:qualifiedRelation
+        multivalued: true
+        range: dcat_Relationship
+      dcat_spatialResolutionInMeters:
+        slot_uri: dcat:spatialResolutionInMeters
+        multivalued: true
+        range: xsd_decimal
+      dcat_temporalResolution:
+        slot_uri: dcat:temporalResolution
+        multivalued: true
+        range: xsd_duration
+      dcat_version:
+        slot_uri: dcat:version
+        multivalued: true
+        range: rdfs_Literal
+      dct_accessRights:
+        slot_uri: dct:accessRights
+        range: dct_Frequency
+      dct_accuralPeriodicity:
+        slot_uri: dct:accuralPeriodicity
+        range: dct_Frequency
+      dct_conformsTo:
+        slot_uri: dct:conformsTo
+        multivalued: true
+        range: dct_Standard
+      dct_identifier:
+        slot_uri: dct:identifier
+        multivalued: true
+        range: rdfs_Literal
+      dct_isReferencedBy:
+        slot_uri: dct:isReferencedBy
+        multivalued: true
+        range: rdfs_Resource
+      dct_issued:
+        slot_uri: dct:issued
+      dct_language:
+        slot_uri: dct:language
+        multivalued: true
+        range: dct_LinguisticSystem
+      dct_modified:
+        slot_uri: dct:modified
+      dct_provenance:
+        slot_uri: dct:provenance
+        multivalued: true
+        range: dct_ProvenanceStatement
+      dct_relation:
+        slot_uri: dct:relation
+        multivalued: true
+        range: rdfs_Resource
+      dct_type:
+        slot_uri: dct:type
+        range: skos_Concept
+      foaf_page:
+        slot_uri: foaf:page
+        multivalued: true
+        range: foaf_Document
+      owl_versionInfo:
+        slot_uri: owl:versionInfo
+        range: rdfs_Literal
+      prov_qualifiedAttribution:
+        slot_uri: prov:qualifiedAttribution
+        multivalued: true
+        range: prov_Attribution
+      prov_wasGeneratedBy:
+        slot_uri: prov:wasGeneratedBy
+        multivalued: true
+        range: prov_Activity
+      dcat_themeTaxonomy:
+        slot_uri: dcat:themeTaxonomy
+        multivalued: true
+        range: skos_Concept
+      dct_spatial:
+        slot_uri: dct:spatial
+        multivalued: true
+        range: dct_Location
+      dct_temporal:
+        slot_uri: dct:temporal
+        multivalued: true
+        range: dct_PeriodOfTime
+      dct_publisher:
+        slot_uri: dct:publisher
+        range: foaf_agent
+      dcat_distribution:
+        slot_uri: dcat:distribution
+        multivalued: true
+        range: dcat_Distribution
+      dcat_hasVersion:
+        slot_uri: dcat:hasVersion
+        multivalued: true
+        range: dcat_Dataset
+      dcat_isVersionOf:
+        slot_uri: dcat:isVersionOf
+        multivalued: true
+        range: dcat_Dataset
+      dct_source:
+        slot_uri: dct:source
+        multivalued: true
+        range: dcat_Dataset
+      adms_sample:
+        slot_uri: adms:sample
+        multivalued: true
+        range: dcat_Distribution
+  dcat_Distribution:
+    from_schema: TEMP
+    slots:
+    - dcat_accessURL
+    - dcatap_availability
+    - dct_description
+    - dct_format
+    - adms_status
+    - dcat_byteSize
+    - dcat_compressFormat
+    - dcat_downloadURL
+    - dcat_mediaType
+    - dcat_packageFormat
+    - dcat_spatialResolutionInMeters
+    - dcat_temporalResolution
+    - dct_conformsTo
+    - dct_issued
+    - dct_language
+    - dct_modified
+    - dct_rights
+    - dct_title
+    - foaf_page
+    - odrl_hasPolicy
+    - spdx_checksum
+    - dct_license
+    - dcat_accessesService
+    slot_usage:
+      dcat_accessURL:
+        slot_uri: dcat:accessURL
+        multivalued: true
+        range: rdfs_Resource
+        required: true
+      dcatap_availability:
+        slot_uri: dcatap:availability
+        range: skos_Concept
+      dct_description:
+        slot_uri: dcat:description
+        multivalued: true
+        range: rdfs_Literal
+      dct_format:
+        slot_uri: dct:format
+        range: dct_MediaTypeOrExtent
+      adms_status:
+        slot_uri: adms:status
+        range: skos_Concept
+      dcat_byteSize:
+        slot_uri: dcat:byteSize
+        range: xsd_nonNegativInteger
+      dcat_compressFormat:
+        slot_uri: dcat:compressFormat
+        range: dct_MediaType
+      dcat_downloadURL:
+        slot_uri: dcat:downloadURL
+        multivalued: true
+        range: rdfs_Resource
+      dcat_mediaType:
+        slot_uri: dcat:compressFormat
+        range: dct_MediaType
+      dcat_packageFormat:
+        slot_uri: dcat:packageFormat
+        range: dct_MediaType
+      dcat_spatialResolutionInMeters:
+        slot_uri: dcat:spatialResolutionInMeters
+        multivalued: true
+        range: xsd_decimal
+      dcat_temporalResolution:
+        slot_uri: dcat:temporalResolution
+        multivalued: true
+        range: xsd_duration
+      dct_conformsTo:
+        slot_uri: dct:conformsTo
+        multivalued: true
+        range: dct_Standard
+      dct_issued:
+        slot_uri: dct:issued
+      dct_language:
+        slot_uri: dct:language
+        multivalued: true
+        range: dct_LinguisticSystem
+      dct_modified:
+        slot_uri: dct:modified
+      dct_rights:
+        slot_uri: dct:rights
+        range: dct_RightsStatement
+      dct_title:
+        slot_uri: dct:title
+        multivalued: true
+        range: rdfs_Literal
+      foaf_page:
+        slot_uri: foaf:page
+        multivalued: true
+        range: foaf_Document
+      odrl_hasPolicy:
+        slot_uri: odrl:hasPolicy
+        range: odrl_hasPolicy
+      spdx_checksum:
+        slot_uri: spdx:checksum
+        range: spdx_Checksum
+      dct_license:
+        slot_uri: dct:license
+        range: dct_LicenseDocument
+      dcat_accessesService:
+        slot_uri: dcat:accessesService
+        multivalued: true
+        range: dcat_DataService
+  dcat_Catalog:
+    from_schema: TEMP
+    slots:
+    - dct_description
+    - dct_title
+    - dcat_themeTaxonomy
+    - dct_issued
+    - dct_language
+    - dct_modified
+    - foaf_homepage
+    - dct_rights
+    - dct_publisher
+    - dct_license
+    - dcat_service
+    - dct_spatial
+    - dcat_dataset
+    - dcat_catalog
+    - dct_hasPart
+    - dct_isPart
+    - dct_temporal
+    - dcat_record
+    - dct_creator
+    slot_usage:
+      dct_description:
+        slot_uri: dcat:description
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dct_title:
+        slot_uri: dct:title
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dcat_themeTaxonomy:
+        slot_uri: dcat:themeTaxonomy
+        multivalued: true
+        range: skos_Concept
+      dct_issued:
+        slot_uri: dct:issued
+      dct_language:
+        slot_uri: dct:language
+        multivalued: true
+        range: dct_LinguisticSystem
+      dct_modified:
+        slot_uri: dct:modified
+      foaf_homepage:
+        slot_uri: foaf:homepage
+        range: foaf_Document
+      dct_rights:
+        slot_uri: dct:rights
+        range: dct_RightsStatement
+      dct_publisher:
+        slot_uri: dct:publisher
+        range: foaf_agent
+        required: true
+      dct_license:
+        slot_uri: dct:license
+        range: dct_LicenseDocument
+      dcat_service:
+        slot_uri: dcat:service
+        multivalued: true
+        range: dcat_DataService
+      dct_spatial:
+        slot_uri: dct:spatial
+        multivalued: true
+        range: dct_Location
+      dcat_dataset:
+        slot_uri: dcat:dataset
+        multivalued: true
+        range: dcat_Dataset
+      dcat_catalog:
+        slot_uri: dcat:catalog
+        multivalued: true
+        range: dcat_Catalog
+      dct_hasPart:
+        slot_uri: dct:hasPart
+        multivalued: true
+        range: dcat_Catalog
+      dct_isPart:
+        slot_uri: dct:isPart
+        range: dcat_Catalog
+      dct_temporal:
+        slot_uri: dct:temporal
+        multivalued: true
+        range: dct_PeriodOfTime
+      dcat_record:
+        slot_uri: dcat:record
+        multivalued: true
+        range: dcat_CatalogRecord
+      dct_creator:
+        slot_uri: dct:creator
+        range: foaf_agent
+  dct_LicenseDocument:
+    from_schema: TEMP
+    slots:
+    - dct_type
+    slot_usage:
+      dct_type:
+        slot_uri: dct:type
+        multivalued: true
+        range: skos_Concept
+  dcat_DataService:
+    from_schema: TEMP
+    slots:
+    - dcat_endpointURL
+    - dct_title
+    - dcat_endpointDescription
+    - dct_accessRights
+    - dct_description
+    - dct_format
+    - dcat_servesDataset
+    - dct_license
+    slot_usage:
+      dcat_endpointURL:
+        slot_uri: dcat:endpointURL
+        multivalued: true
+        range: rdfs_Resource
+        required: true
+      dct_title:
+        slot_uri: dct:title
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dcat_endpointDescription:
+        slot_uri: dcat:endpointDescription
+        multivalued: true
+        range: rdfs_Resource
+      dct_accessRights:
+        slot_uri: dct:accessRights
+        range: dct_RightsStatement
+      dct_description:
+        slot_uri: dcat:description
+        multivalued: true
+        range: rdfs_Literal
+      dct_format:
+        slot_uri: dct:format
+        multivalued: true
+        range: dct_MediaTypeOrExtent
+      dcat_servesDataset:
+        slot_uri: dcat:servesDataset
+        multivalued: true
+        range: dcat_Dataset
+      dct_license:
+        slot_uri: dct:license
+        range: dct_LicenseDocument
+  dcat_CatalogRecord:
+    from_schema: TEMP
+    slots:
+    - dct_modified
+    - adms_status
+    - dct_conformsTo
+    - dct_issued
+    - dct_description
+    - dct_language
+    - dct_title
+    - foaf_primaryTopic
+    - dct_source
+    slot_usage:
+      dct_modified:
+        slot_uri: dct:modified
+        required: true
+      adms_status:
+        slot_uri: adms:status
+        range: skos_Concept
+      dct_conformsTo:
+        slot_uri: dct:conformsTo
+        multivalued: true
+        range: dct_Standard
+      dct_issued:
+        slot_uri: dct:issued
+      dct_description:
+        slot_uri: dcat:description
+        multivalued: true
+        range: rdfs_Literal
+      dct_language:
+        slot_uri: dct:language
+        multivalued: true
+        range: dct_LinguisticSystem
+      dct_title:
+        slot_uri: dct:title
+        multivalued: true
+        range: rdfs_Literal
+      foaf_primaryTopic:
+        slot_uri: foaf:primaryTopic
+        range: dcat_Resource
+        required: true
+      dct_source:
+        slot_uri: dct:source
+        range: dcat_CatalogRecord
+  dct_Location:
+    from_schema: TEMP
+    slots:
+    - dcat_bbox
+    - dcat_centroid
+    - lcon_geometry
+    slot_usage:
+      dcat_bbox:
+        slot_uri: dcat:bbox
+        range: rdfs_Literal
+      dcat_centroid:
+        slot_uri: dcat:centroid
+        range: rdfs_Literal
+      lcon_geometry:
+        slot_uri: lcon:geometry
+        range: lcon_Geometry
+  dct_PeriodOfTime:
+    from_schema: TEMP
+    slots:
+    - dcat_endDate
+    - dcat_startDate
+    - time_hasBeginning
+    - time_hasEnd
+    slot_usage:
+      dcat_endDate:
+        slot_uri: dcat:endDate
+      dcat_startDate:
+        slot_uri: dcat:startDate
+      time_hasBeginning:
+        slot_uri: time:hasBeginning
+      time_hasEnd:
+        slot_uri: time:hasEnd
+  foaf_agent:
+    from_schema: TEMP
+    slots:
+    - foaf_name
+    - dct_type
+    slot_usage:
+      foaf_name:
+        slot_uri: foaf:name
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dct_type:
+        slot_uri: dct:type
+        range: skos_Concept
+  DatasetinSeries:
+    from_schema: TEMP
+    slots:
+    - dct_description
+    - dct_title
+    - dct_accuralPeriodicity
+    - dcat_prev
+    - dcat_next
+    - dcat_inSeries
+    slot_usage:
+      dct_description:
+        slot_uri: dcat:description
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dct_title:
+        slot_uri: dct:title
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dct_accuralPeriodicity:
+        slot_uri: dct:accuralPeriodicity
+        multivalued: true
+        range: dct_Frequency
+      dcat_prev:
+        slot_uri: dcat:prev
+        multivalued: true
+        range: DatasetinSeries
+      dcat_next:
+        slot_uri: dcat:next
+        multivalued: true
+        range: DatasetinSeries
+      dcat_inSeries:
+        slot_uri: dcat:inSeries
+        multivalued: true
+        range: dcat_DatasetSeries
+  dcat_DatasetSeries:
+    from_schema: TEMP
+    slots:
+    - dct_description
+    - dct_title
+    - dcat_contactPoint
+    - dct_accuralPeriodicity
+    - dct_issued
+    - dct_modified
+    - dct_spatial
+    - dct_temporal
+    - dct_publisher
+    - dcat_seriesMember
+    - dcat_first
+    - dcat_last
+    slot_usage:
+      dct_description:
+        slot_uri: dcat:description
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dct_title:
+        slot_uri: dct:title
+        multivalued: true
+        range: rdfs_Literal
+        required: true
+      dcat_contactPoint:
+        slot_uri: dcat:contactPoint
+        multivalued: true
+        range: vcard_Kind
+      dct_accuralPeriodicity:
+        slot_uri: dct:accuralPeriodicity
+        range: dct_Frequency
+      dct_issued:
+        slot_uri: dct:issued
+      dct_modified:
+        slot_uri: dct:modified
+      dct_spatial:
+        slot_uri: dct:spatial
+        multivalued: true
+        range: dct_Location
+      dct_temporal:
+        slot_uri: dct:temporal
+        multivalued: true
+        range: dct_PeriodOfTime
+      dct_publisher:
+        slot_uri: dct:publisher
+        range: foaf_agent
+      dcat_seriesMember:
+        slot_uri: dcat:seriesMember
+        multivalued: true
+        range: DatasetinSeries
+      dcat_first:
+        slot_uri: dcat:first
+        multivalued: true
+        range: DatasetinSeries
+      dcat_last:
+        slot_uri: dcat:last
+        multivalued: true
+        range: DatasetinSeries
+  dcat_Resource:
+    from_schema: TEMP
+  rdfs_Literal:
+    from_schema: TEMP
+  vcard_Kind:
+    from_schema: TEMP
+  skos_Concept:
+    from_schema: TEMP
+  adms_Identifier:
+    from_schema: TEMP
+  foaf_Document:
+    from_schema: TEMP
+  dcat_Relationship:
+    from_schema: TEMP
+  xsd_decimal:
+    from_schema: TEMP
+  xsd_duration:
+    from_schema: TEMP
+  dct_Frequency:
+    from_schema: TEMP
+  dct_Standard:
+    from_schema: TEMP
+  rdfs_Resource:
+    from_schema: TEMP
+  dct_LinguisticSystem:
+    from_schema: TEMP
+  dct_ProvenanceStatement:
+    from_schema: TEMP
+  prov_Attribution:
+    from_schema: TEMP
+  prov_Activity:
+    from_schema: TEMP
+  dct_MediaTypeOrExtent:
+    from_schema: TEMP
+  xsd_nonNegativInteger:
+    from_schema: TEMP
+  dct_MediaType:
+    from_schema: TEMP
+  dct_RightsStatement:
+    from_schema: TEMP
+  odrl_hasPolicy: {}
+  spdx_Checksum:
+    from_schema: TEMP
+  lcon_Geometry:
+    from_schema: TEMP
+  xsd_date:
+    from_schema: TEMP
+  xsd_dateTime:
+    from_schema: TEMP
+  xsd_gYear:
+    from_schema: TEMP
+  xsd_gYearMonth:
+    from_schema: TEMP

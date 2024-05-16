@@ -1,0 +1,241 @@
+record	field	key	range	cardinality	multiplicity
+> class	slot	slot_uri	range	required	multivalued
+>					
+	dct_description	dcat:description	rdfs_Literal	true	true
+	dct_title	dct:title	rdfs_Literal	true	true
+	dct_contactPoint	dct:contactPoint	vcard_Kind	false	true
+	dct_keyword	dct:keyword	rdfs_Literal	false	true
+	dct_theme	dct:theme	skos_Concept	false	true
+	adms_identifier	adms:identifier	adms_Identifier	false	true
+	adms_versionNotes	adms:versionNotes	rdfs_Literal	false	true
+	dcat_landingPage	dcat:landingPage	foaf_Document	false	true
+	dcat_qualifiedRelation	dcat:qualifiedRelation	dcat_Relationship	false	true
+	dcat_spatialResolutionInMeters	dcat:spatialResolutionInMeters	xsd_decimal	false	true
+	dcat_temporalResolution	dcat:temporalResolution	xsd_duration	false	true
+	dcat_version	dcat:version	rdfs_Literal	false	true
+	dct_accessRights	dct:accessRights	dct_Frequency	false	false
+	dct_accuralPeriodicity	dct:accuralPeriodicity	dct_Frequency	false	false
+	dct_conformsTo	dct:conformsTo	dct_Standard	false	true
+	dct_identifier	dct:identifier	rdfs_Literal	false	true
+	dct_isReferencedBy	dct:isReferencedBy	rdfs_Resource	false	true
+	dct_issued	dct:issued		false	false
+	dct_language	dct:language	dct_LinguisticSystem	false	true
+	dct_modified	dct:modified		false	false
+	dct_provenance	dct:provenance	dct_ProvenanceStatement	false	true
+	dct_relation	dct:relation	rdfs_Resource	false	true
+	dct_type	dct:type	skos_Concept	false	false
+	foaf_page	foaf:page	foaf_Document	false	true
+	owl_versionInfo	owl:versionInfo	rdfs_Literal	false	false
+	prov_qualifiedAttribution	prov:qualifiedAttribution	prov_Attribution	false	true
+	prov_wasGeneratedBy	prov:wasGeneratedBy	prov_Activity	false	true
+	dcat_themeTaxonomy	dcat:themeTaxonomy	skos_Concept	false	true
+	dct_spatial	dct:spatial	dct_Location	false	true
+	dct_temporal	dct:temporal	dct_PeriodOfTime	false	true
+	dct_publisher	dct:publisher	foaf_agent	false	false
+	dcat_distribution	dcat:distribution	dcat_Distribution	false	true
+	dcat_hasVersion	dcat:hasVersion	dcat_Dataset	false	true
+	dcat_isVersionOf	dcat:isVersionOf	dcat_Dataset	false	true
+	dct_source	dct:source	dcat_Dataset	false	true
+	adms_sample	adms:sample	dcat_Distribution	false	true
+	dcat_accessURL	dcat:accessURL	rdfs_Resource	true	true
+	dcatap_availability	dcatap:availability	skos_Concept	false	false
+	dct_format	dct:format	dct_MediaTypeOrExtent	false	false
+	adms_status	adms:status	skos_Concept	false	false
+	dcat_byteSize	dcat:byteSize	xsd_nonNegativInteger	false	false
+	dcat_compressFormat	dcat:compressFormat	dct_MediaType	false	false
+	dcat_downloadURL	dcat:downloadURL	rdfs_Resource	false	true
+	dcat_mediaType	dcat:compressFormat	dct_MediaType	false	false
+	dcat_packageFormat	dcat:packageFormat	dct_MediaType	false	false
+	dct_rights	dct:rights	dct_RightsStatement	false	false
+	odrl_hasPolicy	odrl:hasPolicy	odrl_hasPolicy	false	false
+	spdx_checksum	spdx:checksum	spdx_Checksum	false	false
+	dct_license	dct:license	dct_LicenseDocument	false	false
+	dcat_accessesService	dcat:accessesService	dcat_DataService	false	true
+	foaf_homepage	foaf:homepage	foaf_Document	false	false
+	dcat_service	dcat:service	dcat_DataService	false	true
+	dcat_dataset	dcat:dataset	dcat_Dataset	false	true
+	dcat_catalog	dcat:catalog	dcat_Catalog	false	true
+	dct_hasPart	dct:hasPart	dcat_Catalog	false	true
+	dct_isPart	dct:isPart	dcat_Catalog	false	false
+	dcat_record	dcat:record	dcat_CatalogRecord	false	true
+	dct_creator	dct:creator	foaf_agent	false	false
+	dcat_endpointURL	dcat:endpointURL	rdfs_Resource	true	true
+	dcat_endpointDescription	dcat:endpointDescription	rdfs_Resource	false	true
+	dcat_servesDataset	dcat:servesDataset	dcat_Dataset	false	true
+	foaf_primaryTopic	foaf:primaryTopic	dcat_Resource	true	false
+	dcat_bbox	dcat:bbox	rdfs_Literal	false	false
+	dcat_centroid	dcat:centroid	rdfs_Literal	false	false
+	lcon_geometry	lcon:geometry	lcon_Geometry	false	false
+	dcat_endDate	dcat:endDate		false	false
+	dcat_startDate	dcat:startDate		false	false
+	time_hasBeginning	time:hasBeginning		false	false
+	time_hasEnd	time:hasEnd		false	false
+	foaf_name	foaf:name	rdfs_Literal	true	true
+	dcat_prev	dcat:prev	DatasetinSeries	false	true
+	dcat_next	dcat:next	DatasetinSeries	false	true
+	dcat_inSeries	dcat:inSeries	dcat_DatasetSeries	false	true
+	dcat_contactPoint	dcat:contactPoint	vcard_Kind	false	true
+	dcat_seriesMember	dcat:seriesMember	DatasetinSeries	false	true
+	dcat_first	dcat:first	DatasetinSeries	false	true
+	dcat_last	dcat:last	DatasetinSeries	false	true
+dcat_Dataset					
+dcat_Dataset	dct_description	dcat:description	rdfs_Literal	true	true
+dcat_Dataset	dct_title	dct:title	rdfs_Literal	true	true
+dcat_Dataset	dct_contactPoint	dct:contactPoint	vcard_Kind	false	true
+dcat_Dataset	dct_keyword	dct:keyword	rdfs_Literal	false	true
+dcat_Dataset	dct_theme	dct:theme	skos_Concept	false	true
+dcat_Dataset	adms_identifier	adms:identifier	adms_Identifier	false	true
+dcat_Dataset	adms_versionNotes	adms:versionNotes	rdfs_Literal	false	true
+dcat_Dataset	dcat_landingPage	dcat:landingPage	foaf_Document	false	true
+dcat_Dataset	dcat_qualifiedRelation	dcat:qualifiedRelation	dcat_Relationship	false	true
+dcat_Dataset	dcat_spatialResolutionInMeters	dcat:spatialResolutionInMeters	xsd_decimal	false	true
+dcat_Dataset	dcat_temporalResolution	dcat:temporalResolution	xsd_duration	false	true
+dcat_Dataset	dcat_version	dcat:version	rdfs_Literal	false	true
+dcat_Dataset	dct_accessRights	dct:accessRights	dct_Frequency	false	false
+dcat_Dataset	dct_accuralPeriodicity	dct:accuralPeriodicity	dct_Frequency	false	false
+dcat_Dataset	dct_conformsTo	dct:conformsTo	dct_Standard	false	true
+dcat_Dataset	dct_identifier	dct:identifier	rdfs_Literal	false	true
+dcat_Dataset	dct_isReferencedBy	dct:isReferencedBy	rdfs_Resource	false	true
+dcat_Dataset	dct_issued	dct:issued		false	false
+dcat_Dataset	dct_language	dct:language	dct_LinguisticSystem	false	true
+dcat_Dataset	dct_modified	dct:modified		false	false
+dcat_Dataset	dct_provenance	dct:provenance	dct_ProvenanceStatement	false	true
+dcat_Dataset	dct_relation	dct:relation	rdfs_Resource	false	true
+dcat_Dataset	dct_type	dct:type	skos_Concept	false	false
+dcat_Dataset	foaf_page	foaf:page	foaf_Document	false	true
+dcat_Dataset	owl_versionInfo	owl:versionInfo	rdfs_Literal	false	false
+dcat_Dataset	prov_qualifiedAttribution	prov:qualifiedAttribution	prov_Attribution	false	true
+dcat_Dataset	prov_wasGeneratedBy	prov:wasGeneratedBy	prov_Activity	false	true
+dcat_Dataset	dcat_themeTaxonomy	dcat:themeTaxonomy	skos_Concept	false	true
+dcat_Dataset	dct_spatial	dct:spatial	dct_Location	false	true
+dcat_Dataset	dct_temporal	dct:temporal	dct_PeriodOfTime	false	true
+dcat_Dataset	dct_publisher	dct:publisher	foaf_agent	false	false
+dcat_Dataset	dcat_distribution	dcat:distribution	dcat_Distribution	false	true
+dcat_Dataset	dcat_hasVersion	dcat:hasVersion	dcat_Dataset	false	true
+dcat_Dataset	dcat_isVersionOf	dcat:isVersionOf	dcat_Dataset	false	true
+dcat_Dataset	dct_source	dct:source	dcat_Dataset	false	true
+dcat_Dataset	adms_sample	adms:sample	dcat_Distribution	false	true
+dcat_Distribution					
+dcat_Distribution	dcat_accessURL	dcat:accessURL	rdfs_Resource	true	true
+dcat_Distribution	dcatap_availability	dcatap:availability	skos_Concept	false	false
+dcat_Distribution	dct_description	dcat:description	rdfs_Literal	false	true
+dcat_Distribution	dct_format	dct:format	dct_MediaTypeOrExtent	false	false
+dcat_Distribution	adms_status	adms:status	skos_Concept	false	false
+dcat_Distribution	dcat_byteSize	dcat:byteSize	xsd_nonNegativInteger	false	false
+dcat_Distribution	dcat_compressFormat	dcat:compressFormat	dct_MediaType	false	false
+dcat_Distribution	dcat_downloadURL	dcat:downloadURL	rdfs_Resource	false	true
+dcat_Distribution	dcat_mediaType	dcat:compressFormat	dct_MediaType	false	false
+dcat_Distribution	dcat_packageFormat	dcat:packageFormat	dct_MediaType	false	false
+dcat_Distribution	dcat_spatialResolutionInMeters	dcat:spatialResolutionInMeters	xsd_decimal	false	true
+dcat_Distribution	dcat_temporalResolution	dcat:temporalResolution	xsd_duration	false	true
+dcat_Distribution	dct_conformsTo	dct:conformsTo	dct_Standard	false	true
+dcat_Distribution	dct_issued	dct:issued		false	false
+dcat_Distribution	dct_language	dct:language	dct_LinguisticSystem	false	true
+dcat_Distribution	dct_modified	dct:modified		false	false
+dcat_Distribution	dct_rights	dct:rights	dct_RightsStatement	false	false
+dcat_Distribution	dct_title	dct:title	rdfs_Literal	false	true
+dcat_Distribution	foaf_page	foaf:page	foaf_Document	false	true
+dcat_Distribution	odrl_hasPolicy	odrl:hasPolicy	odrl_hasPolicy	false	false
+dcat_Distribution	spdx_checksum	spdx:checksum	spdx_Checksum	false	false
+dcat_Distribution	dct_license	dct:license	dct_LicenseDocument	false	false
+dcat_Distribution	dcat_accessesService	dcat:accessesService	dcat_DataService	false	true
+dcat_Catalog					
+dcat_Catalog	dct_description	dcat:description	rdfs_Literal	true	true
+dcat_Catalog	dct_title	dct:title	rdfs_Literal	true	true
+dcat_Catalog	dcat_themeTaxonomy	dcat:themeTaxonomy	skos_Concept	false	true
+dcat_Catalog	dct_issued	dct:issued		false	false
+dcat_Catalog	dct_language	dct:language	dct_LinguisticSystem	false	true
+dcat_Catalog	dct_modified	dct:modified		false	false
+dcat_Catalog	foaf_homepage	foaf:homepage	foaf_Document	false	false
+dcat_Catalog	dct_rights	dct:rights	dct_RightsStatement	false	false
+dcat_Catalog	dct_publisher	dct:publisher	foaf_agent	true	false
+dcat_Catalog	dct_license	dct:license	dct_LicenseDocument	false	false
+dcat_Catalog	dcat_service	dcat:service	dcat_DataService	false	true
+dcat_Catalog	dct_spatial	dct:spatial	dct_Location	false	true
+dcat_Catalog	dcat_dataset	dcat:dataset	dcat_Dataset	false	true
+dcat_Catalog	dcat_catalog	dcat:catalog	dcat_Catalog	false	true
+dcat_Catalog	dct_hasPart	dct:hasPart	dcat_Catalog	false	true
+dcat_Catalog	dct_isPart	dct:isPart	dcat_Catalog	false	false
+dcat_Catalog	dct_temporal	dct:temporal	dct_PeriodOfTime	false	true
+dcat_Catalog	dcat_record	dcat:record	dcat_CatalogRecord	false	true
+dcat_Catalog	dct_creator	dct:creator	foaf_agent	false	false
+dct_LicenseDocument					
+dct_LicenseDocument	dct_type	dct:type	skos_Concept	false	true
+dcat_DataService					
+dcat_DataService	dcat_endpointURL	dcat:endpointURL	rdfs_Resource	true	true
+dcat_DataService	dct_title	dct:title	rdfs_Literal	true	true
+dcat_DataService	dcat_endpointDescription	dcat:endpointDescription	rdfs_Resource	false	true
+dcat_DataService	dct_accessRights	dct:accessRights	dct_RightsStatement	false	false
+dcat_DataService	dct_description	dcat:description	rdfs_Literal	false	true
+dcat_DataService	dct_format	dct:format	dct_MediaTypeOrExtent	false	true
+dcat_DataService	dcat_servesDataset	dcat:servesDataset	dcat_Dataset	false	true
+dcat_DataService	dct_license	dct:license	dct_LicenseDocument	false	false
+dcat_CatalogRecord					
+dcat_CatalogRecord	dct_modified	dct:modified		true	false
+dcat_CatalogRecord	adms_status	adms:status	skos_Concept	false	false
+dcat_CatalogRecord	dct_conformsTo	dct:conformsTo	dct_Standard	false	true
+dcat_CatalogRecord	dct_issued	dct:issued		false	false
+dcat_CatalogRecord	dct_description	dcat:description	rdfs_Literal	false	true
+dcat_CatalogRecord	dct_language	dct:language	dct_LinguisticSystem	false	true
+dcat_CatalogRecord	dct_title	dct:title	rdfs_Literal	false	true
+dcat_CatalogRecord	foaf_primaryTopic	foaf:primaryTopic	dcat_Resource	true	false
+dcat_CatalogRecord	dct_source	dct:source	dcat_CatalogRecord	false	false
+dct_Location					
+dct_Location	dcat_bbox	dcat:bbox	rdfs_Literal	false	false
+dct_Location	dcat_centroid	dcat:centroid	rdfs_Literal	false	false
+dct_Location	lcon_geometry	lcon:geometry	lcon_Geometry	false	false
+dct_PeriodOfTime					
+dct_PeriodOfTime	dcat_endDate	dcat:endDate		false	false
+dct_PeriodOfTime	dcat_startDate	dcat:startDate		false	false
+dct_PeriodOfTime	time_hasBeginning	time:hasBeginning		false	false
+dct_PeriodOfTime	time_hasEnd	time:hasEnd		false	false
+foaf_agent					
+foaf_agent	foaf_name	foaf:name	rdfs_Literal	true	true
+foaf_agent	dct_type	dct:type	skos_Concept	false	false
+DatasetinSeries					
+DatasetinSeries	dct_description	dcat:description	rdfs_Literal	true	true
+DatasetinSeries	dct_title	dct:title	rdfs_Literal	true	true
+DatasetinSeries	dct_accuralPeriodicity	dct:accuralPeriodicity	dct_Frequency	false	true
+DatasetinSeries	dcat_prev	dcat:prev	DatasetinSeries	false	true
+DatasetinSeries	dcat_next	dcat:next	DatasetinSeries	false	true
+DatasetinSeries	dcat_inSeries	dcat:inSeries	dcat_DatasetSeries	false	true
+dcat_DatasetSeries					
+dcat_DatasetSeries	dct_description	dcat:description	rdfs_Literal	true	true
+dcat_DatasetSeries	dct_title	dct:title	rdfs_Literal	true	true
+dcat_DatasetSeries	dcat_contactPoint	dcat:contactPoint	vcard_Kind	false	true
+dcat_DatasetSeries	dct_accuralPeriodicity	dct:accuralPeriodicity	dct_Frequency	false	false
+dcat_DatasetSeries	dct_issued	dct:issued		false	false
+dcat_DatasetSeries	dct_modified	dct:modified		false	false
+dcat_DatasetSeries	dct_spatial	dct:spatial	dct_Location	false	true
+dcat_DatasetSeries	dct_temporal	dct:temporal	dct_PeriodOfTime	false	true
+dcat_DatasetSeries	dct_publisher	dct:publisher	foaf_agent	false	false
+dcat_DatasetSeries	dcat_seriesMember	dcat:seriesMember	DatasetinSeries	false	true
+dcat_DatasetSeries	dcat_first	dcat:first	DatasetinSeries	false	true
+dcat_DatasetSeries	dcat_last	dcat:last	DatasetinSeries	false	true
+dcat_Resource					
+rdfs_Literal					
+vcard_Kind					
+skos_Concept					
+adms_Identifier					
+foaf_Document					
+dcat_Relationship					
+xsd_decimal					
+xsd_duration					
+dct_Frequency					
+dct_Standard					
+rdfs_Resource					
+dct_LinguisticSystem					
+dct_ProvenanceStatement					
+prov_Attribution					
+prov_Activity					
+dct_MediaTypeOrExtent					
+xsd_nonNegativInteger					
+dct_MediaType					
+dct_RightsStatement					
+odrl_hasPolicy					
+spdx_Checksum					
+lcon_Geometry					
+xsd_date					
+xsd_dateTime					
+xsd_gYear					
+xsd_gYearMonth					

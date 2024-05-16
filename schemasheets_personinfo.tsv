@@ -1,0 +1,3 @@
+record	field	key	range	cardinality	multiplicity
+> class	slot	slot_uri	range	required	multivalued
+>					
